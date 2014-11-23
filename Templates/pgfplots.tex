@@ -1,0 +1,41 @@
+\documentclass[12pt]{article}
+
+\usepackage{calc}
+\usepackage{xcolor} % add dvipsnames option if not converting to EPS
+\definecolor{ForestGreen}{HTML}{347235}
+\usepackage{pgfplots}
+%\usepackage{pgfplotstable}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+
+\pagestyle{empty}
+
+\pgfkeys{/pgf/number format/.cd,
+  set thousands separator={}}
+\pgfplotsset{every axis/.append style={thick}}
+\pgfplotsset{every axis plot/.append style={thick}}
+\pgfplotsset{every tick/.append style={thick,black}}
+\pgfplotsset{legend style={legend cell align=left,fill=none}}
+
+\begin{document}
+\begin{tikzpicture}
+  % For reading CSV files
+  % \pgfplotstableread[col sep=comma]{data.csv}\data
+  
+  \begin{axis}[width=5in,height=3.09in,
+      xlabel={},ylabel={},
+      legend style={legend pos=north west,
+        draw=none}%,
+      %xmin=0,xmax=10,ymin=0,ymax=10
+      ]
+
+    % For tabled 2D data
+    % \addplot[color=blue] table[] {\data};
+  \end{axis}
+\end{tikzpicture}
+\end{document}
+
+%%% Local Variables: 
+%%% mode: tex-pdf
+%%% TeX-master: t
+%%% End: 
