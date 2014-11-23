@@ -1,8 +1,5 @@
 ;; -*- emacs-lisp -*-
 
-;; Load path
-(add-to-list 'load-path "~/.lisp")
-
 ;; Syntax highlighting.
 (global-font-lock-mode t)
 (set-face-foreground 'font-lock-comment-face "red")
@@ -24,16 +21,14 @@
 (xterm-mouse-mode t)
 (mouse-wheel-mode t)
 
-;; org-mode
-(setq load-path (cons "/usr/share/org-mode/lisp" load-path))
-(setq load-path (cons "/usr/share/emacs/site-lisp/org-mode/org.el" load-path))
-(setq org-directory "~/Documents/org")
-(setq org-mobile-inbox-for-pull "~/Documents/org/pull.org")
-(setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
-(require 'org-install)
+;; Emacs package management
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (package-initialize)
+  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t))
 
 ;; LaTeX mode settings.
-(require 'latex)
+(require 'latex nil 'noerror)
 (add-hook 'LaTeX-mode-hook
 	  (lambda nil (set-face-foreground 'font-latex-sedate-face "green")))
 (add-hook 'LaTeX-mode-hook 'latex-math-mode)
@@ -43,17 +38,10 @@
   '(add-to-list 'TeX-command-list '("Make" "make" TeX-run-command nil t))) 
 (add-to-list 'auto-mode-alist '("\\.tex\\'" . latex-mode))
 
-;;(add-hook 'LaTeX-mode-hook
-;;	  (lambda () (TeX-fold-mode 1)))
-;;(add-hook 'LaTeX-mode-hook 'auto-fill-mode)
-
 ;; C++ mode settings.
 (defun my-c-mode-common-hook ()
   (c-set-style "stroustrup"))
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
-
-;; Mail mode settings.
-;;(add-hook 'mail-mode-hook 'auto-fill-mode)
 
 ;; General text settings.
 (add-hook 'text-mode-hook 'auto-fill-mode)
@@ -63,7 +51,7 @@
 (setq ispell-program-name "aspell")
 
 ;; Python settings
-(load-file "~/src/foreign/emacs-for-python/epy-init.el")
+(load-file "~/common/emacs.d/emacs-for-python/epy-init.el")
 (epy-setup-checker "pyflakes %f") ; enable on-the-fly code checking
 (epy-setup-ipython)
 (setq skeleton-pair nil) ; don't auto-add parentheses
@@ -71,6 +59,14 @@
 
 ;; Web modes
 (remove-hook 'html-mode-hook 'turn-on-auto-fill)
+(add-to-list 'auto-mode-alist '("\\.json\\'" . js-mode))
+(require 'web-mode nil 'noerror)
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+(setq web-mode-engines-alist '(("html" . "\\.djhtml\\'")))
+(defun my-web-mode-hook () "Hooks for Web mode."
+       (setq web-mode-markup-indent-offset 2))
+(add-hook 'web-mode-hook 'my-web-mode-hook)
 
 ;; Window navigation
 ;; See http://www.emacswiki.org/emacs/WindMove
@@ -89,24 +85,13 @@
 (add-to-list 'load-path "~/src/foreign/arduino-mode")
 (require 'arduino-mode nil 'noerror)
 
-;; Make JSON files use js-mode
-(add-to-list 'auto-mode-alist '("\\.json\\'" . js-mode))
-
-;; Encryption
-;(require 'crypt++)
-;(setenv “GPG_AGENT_INFO” nil)
-;(setq crypt-encryption-type 'gpg
-;      crypt-encryption-file-extension "\\(\\.gpg\\)$")
-;(modify-coding-system-alist 'file "\\.gpg\\'" 'no-conversion)
-;(setq load-path (cons "/usr/share/emacs/site-lisp/ccrypt" load-path))
-;(require 'jka-compr-ccrypt "jka-compr-ccrypt.el")
-
 ;; X settings.
 (if (eq window-system 'x)
     (progn
       (set-face-background 'default "black")
       (set-face-foreground 'default "white")
       (set-cursor-color "#ffffff")))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
