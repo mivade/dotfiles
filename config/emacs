@@ -63,6 +63,7 @@
 (require 'web-mode nil 'noerror)
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 (setq web-mode-engines-alist '(("html" . "\\.djhtml\\'")))
 (defun my-web-mode-hook () "Hooks for Web mode."
        (setq web-mode-markup-indent-offset 2))
@@ -82,7 +83,6 @@
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
 ;; Arduino mode
-(add-to-list 'load-path "~/src/foreign/arduino-mode")
 (require 'arduino-mode nil 'noerror)
 
 ;; X settings.
