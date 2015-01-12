@@ -56,6 +56,7 @@
 (epy-setup-ipython)
 (setq skeleton-pair nil) ; don't auto-add parentheses
 (setq epy-enable-ropemacs nil) ; it takes to long to load for each file...
+;;(electric-indent-mode nil)
 
 ;; Web modes
 (remove-hook 'html-mode-hook 'turn-on-auto-fill)
@@ -99,7 +100,7 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(display-time-mode t)
- '(electric-indent-mode nil)
+;; '(electric-indent-mode nil)
  '(font-use-system-font t)
  '(inhibit-startup-screen t)
  '(python-indent-guess-indent-offset nil)
