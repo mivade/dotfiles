@@ -51,7 +51,7 @@
 (setq ispell-program-name "aspell")
 
 ;; Python settings
-(load-file "~/common/emacs.d/emacs-for-python/epy-init.el")
+(load-file "~/.emacs.d/emacs-for-python/epy-init.el")
 (epy-setup-checker "pyflakes %f") ; enable on-the-fly code checking
 (epy-setup-ipython)
 (setq skeleton-pair nil) ; don't auto-add parentheses
@@ -100,7 +100,6 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(display-time-mode t)
-;; '(electric-indent-mode nil)
  '(font-use-system-font t)
  '(inhibit-startup-screen t)
  '(python-indent-guess-indent-offset nil)
