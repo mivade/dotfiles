@@ -1,0 +1,19 @@
+# -*- conf -*-
+
+[general]
+accounts = depalatis
+
+[Account depalatis]
+localrepository = depalatis_local
+remoterepository = depalatis_remote
+
+[Repository depalatis_local]
+type = Maildir
+localfolders = ~/Mail/depalatis
+
+[Repository depalatis_remote]
+type = IMAP
+remotehost = imap.zoho.com
+remoteport = 993
+ssl = yes
+remoteuser = mike@depalatis.net
