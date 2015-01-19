@@ -2,6 +2,8 @@
 
 [general]
 accounts = depalatis
+ui = basic
+pythonfile = ~/dotfiles/offlineimap/helpers.py
 
 [Account depalatis]
 localrepository = depalatis_local
@@ -16,4 +18,5 @@ type = IMAP
 remotehost = imap.zoho.com
 remoteport = 993
 ssl = yes
-remoteuser = mike@depalatis.net
+remoteusereval = get_username("imap.zoho.com")
+remotepasseval = get_password("imap.zoho.com")
