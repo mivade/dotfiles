@@ -1,0 +1,11 @@
+# -*- conf -*-
+[user]
+	name = Michael V. DePalatis
+	email = mike@depalatis.net
+[alias]
+	graph = log --graph --oneline --all --decorate
+[push]
+	default = simple
+[core]
+	editor = vim
+	excludesfile = "~/dotfiles/git/gitignore"

@@ -3,6 +3,7 @@
 [ui]
 username = Michael V. DePalatis <mike@depalatis.net>
 merge = meld
+ignore = ~/dotfiles/hg/hgignore
 
 [extensions]
 hgext.bookmarks =
