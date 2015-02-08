@@ -1,0 +1,3 @@
+Host iontrap
+	HostName iontrap.phys.au.dk
+	LocalForward 5001 iontrap:5001

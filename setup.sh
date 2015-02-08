@@ -6,3 +6,4 @@ ln -s $HOME/dotfiles/emacs $HOME/.emacs
 # TODO: make this overwrite if it exists
 ln -s $HOME/dotfiles/emacs.d $HOME/.emacs.d
 ln -s $HOME/dotfiles/offlineimap/offlineimaprc $HOME/.offlineimaprc
+ln -s $HOME/dotfiles/ssh_config $HOME/.ssh/config
