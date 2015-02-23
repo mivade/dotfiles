@@ -16,6 +16,7 @@ pager =
 purge = 
 shelve = 
 strip = 
+convert = 
 
 [auth]
 iontrap.schemes = http https
