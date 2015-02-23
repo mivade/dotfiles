@@ -27,6 +27,9 @@
   (package-initialize)
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t))
 
+;; org-mode
+(setq org-log-done t)
+
 ;; LaTeX mode settings.
 (require 'latex nil 'noerror)
 (add-hook 'LaTeX-mode-hook
@@ -56,7 +59,7 @@
 (epy-setup-ipython)
 (setq skeleton-pair nil) ; don't auto-add parentheses
 (setq epy-enable-ropemacs nil) ; it takes to long to load for each file...
-;;(electric-indent-mode nil)
+(add-hook 'python-mode-hook (lambda() (electric-indent-mode -1)))
 
 ;; Web modes
 (remove-hook 'html-mode-hook 'turn-on-auto-fill)
@@ -103,6 +106,11 @@
  '(font-use-system-font t)
  '(inhibit-startup-screen t)
  '(python-indent-guess-indent-offset nil)
+ '(safe-local-variable-values
+   (quote
+    ((TeX-master . t)
+     (TeX-engine . xetex)
+     (TeX-PDF-mode . t))))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
