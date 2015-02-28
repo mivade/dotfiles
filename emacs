@@ -70,7 +70,11 @@
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 (setq web-mode-engines-alist '(("html" . "\\.djhtml\\'")))
 (defun my-web-mode-hook () "Hooks for Web mode."
-       (setq web-mode-markup-indent-offset 2))
+  (local-set-key (kbd "RET") 'newline-and-indent)
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-code-indent-offset 4)
+  (setq-default indent-tabs-mode nil)
+  (setq-default tab-width 4))
 (add-hook 'web-mode-hook 'my-web-mode-hook)
 
 ;; Window navigation
