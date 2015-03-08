@@ -32,3 +32,4 @@ graph = log -G -T "\033[31m{node|short}\033[0m \033[1;34m<{author|person}>\033[0
 [tortoisehg]
 editor = gedit
 vdiff = meld
+shell = x-terminal-emulator
