@@ -10,7 +10,6 @@ hgext.bookmarks =
 #hgext.git =
 rebase = 
 mercurial_keyring =
-graphlog =
 color =
 pager =
 purge = 
@@ -28,7 +27,7 @@ pager = LESS='FSRX' less
 attend = annotate, cat, diff, export, glog, log, qdiff, graph, help
 
 [alias]
-graph = glog --template "\033[31m{node|short}\033[0m \033[1;34m<{author|person}>\033[0m \033[32m({date|age})\033[0m \n\t\t{desc}\n"
+graph = log -G -T "\033[31m{node|short}\033[0m \033[1;34m<{author|person}>\033[0m \033[32m({date|age})\033[0m \n\t\t{desc}\n"
 
 [tortoisehg]
 editor = gedit
