@@ -5,6 +5,9 @@
 mkdir -p $HOME/bin
 ln -s /usr/bin/python3 $HOME/bin/python
 
+cd nanorc; make install; cd -
+ln -s $HOME/dotfiles/nanorc.nanorc $HOME/.nanorc
+
 ln -s $HOME/dotfiles/bash_aliases $HOME/.bash_aliases
 ln -s $HOME/dotfiles/emacs $HOME/.emacs
 # TODO: make this overwrite if it exists
