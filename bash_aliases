@@ -1,5 +1,6 @@
 # -*- bash -*-
 alias python=python3
 alias pip=pip3
-alias virtualenv=virtualenv3
 alias ipython=ipython3
+alias venv='virtualenv -p python3'
+alias venv2='virtualenv -p python2'
