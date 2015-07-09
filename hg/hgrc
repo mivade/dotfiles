@@ -33,3 +33,7 @@ graph = log -G -T "\033[31m{node|short}\033[0m \033[1;34m<{author|person}>\033[0
 editor = gedit
 vdiff = meld
 shell = x-terminal-emulator
+
+[subpaths]
+http://iontrap@iontrap.phys.au.dk:5001/(.*) = http://iontrap@localhost:5001/\1
+http://iontrap.phys.au.dk:5001/(.*) = http://localhost:5001/\1
