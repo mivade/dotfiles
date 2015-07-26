@@ -113,7 +113,7 @@ if ! shopt -oq posix; then
 fi
 
 # Add ~/bin to the front of the path
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 
 # added by Miniconda3 3.10.1 installer
 export PATH="/home/mvd/miniconda3/bin:$PATH"
