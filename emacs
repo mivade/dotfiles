@@ -66,7 +66,7 @@
 (add-to-list 'auto-mode-alist '("\\.json\\'" . js-mode))
 (require 'web-mode nil 'noerror)
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 (setq web-mode-engines-alist '(("html" . "\\.djhtml\\'")))
 (defun my-web-mode-hook () "Hooks for Web mode."
@@ -112,7 +112,8 @@
  '(python-indent-guess-indent-offset nil)
  '(safe-local-variable-values
    (quote
-    ((TeX-master . t)
+    ((TeX-command-default . Make)
+     (TeX-master . t)
      (TeX-engine . xetex)
      (TeX-PDF-mode . t))))
  '(show-paren-mode t))
