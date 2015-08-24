@@ -63,10 +63,11 @@
 
 ;; Web modes
 (remove-hook 'html-mode-hook 'turn-on-auto-fill)
-(add-to-list 'auto-mode-alist '("\\.json\\'" . js-mode))
+(add-to-list 'auto-mode-alist '("\\.json\\'" . web-mode))
 (require 'web-mode nil 'noerror)
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 (setq web-mode-engines-alist '(("html" . "\\.djhtml\\'")))
 (defun my-web-mode-hook () "Hooks for Web mode."
@@ -74,8 +75,14 @@
   (setq web-mode-markup-indent-offset 2)
   (setq web-mode-code-indent-offset 4)
   (setq-default indent-tabs-mode nil)
-  (setq-default tab-width 4))
+  (setq-default tab-width 2))
 (add-hook 'web-mode-hook 'my-web-mode-hook)
+
+;; (eval-after-load 'js2-mode
+;;   '(progn
+;;      (require 'js2-imenu-extras)
+;;      (add-to-list 'js2-imenu-available-frameworks 'react)
+;;      (add-to-list 'js2-imenu-enabled-frameworks 'react)))
 
 ;; Window navigation
 ;; See http://www.emacswiki.org/emacs/WindMove
@@ -92,13 +99,6 @@
 
 ;; Arduino mode
 (require 'arduino-mode nil 'noerror)
-
-;; X settings.
-(if (eq window-system 'x)
-    (progn
-      (set-face-background 'default "black")
-      (set-face-foreground 'default "white")
-      (set-cursor-color "#ffffff")))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
