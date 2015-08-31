@@ -115,5 +115,8 @@ fi
 # Add ~/bin to the front of the path
 export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 
+# Fix some node.js things
+export NODE_PATH=$NODE_PATH:$HOME/.local/lib/node_modules
+
 # added by Miniconda3 3.10.1 installer
 export PATH="/home/mvd/miniconda3/bin:$PATH"
