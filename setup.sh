@@ -3,14 +3,17 @@
 # environment.
 
 mkdir -p $HOME/bin
-ln -s /usr/bin/python3 $HOME/bin/python
 
 cd nanorc; make install; cd -
-ln -s $HOME/dotfiles/nanorc.nanorc $HOME/.nanorc
+ln -sf $HOME/dotfiles/nanorc.nanorc $HOME/.nanorc
 
-ln -s $HOME/dotfiles/bash_aliases $HOME/.bash_aliases
-ln -s $HOME/dotfiles/emacs $HOME/.emacs
-# TODO: make this overwrite if it exists
-#ln -s $HOME/dotfiles/emacs.d $HOME/.emacs.d
-ln -s $HOME/dotfiles/offlineimap/offlineimaprc $HOME/.offlineimaprc
-ln -s $HOME/dotfiles/ssh_config $HOME/.ssh/config
+ln -sf $HOME/dotfiles/bash_aliases $HOME/.bash_aliases
+
+ln -sf $HOME/dotfiles/emacs $HOME/.emacs
+ln -sf $HOME/dotfiles/emacs.d $HOME/.emacs.d
+
+ln -sf $HOME/dotfiles/offlineimap/offlineimaprc $HOME/.offlineimaprc
+
+ln -sf $HOME/dotfiles/ssh_config $HOME/.ssh/config
+
+ln -sf $HOME/dotfiles/cookiecutterrc $HOME/.cookiecutterrc
