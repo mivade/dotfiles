@@ -106,7 +106,20 @@ if ! shopt -oq posix; then
 fi
 
 # Add local installations to the front of the PATH
-export PATH=$HOME/miniconda3/bin:$HOME/bin:$HOME/.local/bin:$PATH
+export CONDA_PATH=$HOME/miniconda3/bin
+export BASE_PATH=$HOME/bin:$HOME/.local/bin:$PATH
+
+# Macros for switching between conda and system Python
+function condafy {
+    export PATH=$CONDA_PATH:$BASE_PATH
+}
+
+function noconda {
+    export PATH=$BASE_PATH
+}
+
+# Use conda by default
+condafy
 
 # Fix some node.js things
 export NODE_PATH=$NODE_PATH:$HOME/.local/lib/node_modules
