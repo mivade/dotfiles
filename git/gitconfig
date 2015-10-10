@@ -2,10 +2,18 @@
 [user]
 	name = Michael V. DePalatis
 	email = mike@depalatis.net
+[diff]
+	tool = diffuse
+[merge]
+	tool = meld
 [alias]
-	graph = log --graph --oneline --all --decorate
+	pushall = "!f(){ for i in `git remote`; do git push $i; done; };f"
+	graph = log --all --oneline --color --graph --decorate=short --date=short
+	last = !git graph -n 10
 [push]
 	default = simple
 [core]
 	editor = vim
 	excludesfile = "~/dotfiles/git/gitignore"
+[credential]
+	helper = store
