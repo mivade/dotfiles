@@ -2,18 +2,25 @@
 # Setup links and other basic common functionality for a new
 # environment.
 
+HERE=$HOME/dotfiles
+
+echo "Creating needed directories..."
 mkdir -p $HOME/bin
 
+echo "Linking bash files..."
+ln -sf $HERE/bashrc $HOME/.bashrc
+ln -sf $HERE/bash_aliases $HOME/.bash_aliases
+
+echo "Building and installing nanorc..."
 cd nanorc; make install; cd -
-ln -sf $HOME/dotfiles/nanorc.nanorc $HOME/.nanorc
+ln -sf $HERE/nanorc.nanorc $HOME/.nanorc
 
-ln -sf $HOME/dotfiles/bash_aliases $HOME/.bash_aliases
+echo "Linking .screenrc..."
+ln -sf $HERE/screenrc $HOME/.screenrc
 
-ln -sf $HOME/dotfiles/emacs $HOME/.emacs
-ln -sf $HOME/dotfiles/emacs.d $HOME/.emacs.d
+echo "Setting up emacs..."
+ln -sf $HERE/emacs $HOME/.emacs
+ln -sf $HERE/emacs.d $HOME/.emacs.d
 
-ln -sf $HOME/dotfiles/offlineimap/offlineimaprc $HOME/.offlineimaprc
-
-ln -sf $HOME/dotfiles/ssh_config $HOME/.ssh/config
-
-ln -sf $HOME/dotfiles/cookiecutterrc $HOME/.cookiecutterrc
+echo "Lining cookiecutter..."
+ln -sf $HERE/cookiecutterrc $HOME/.cookiecutterrc
