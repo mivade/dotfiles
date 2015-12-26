@@ -40,8 +40,8 @@
 (add-hook 'LaTeX-mode-hook 'latex-math-mode)
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex
           (setq reftex-plug-into-AUCTeX t))
-(eval-after-load "tex" 
-  '(add-to-list 'TeX-command-list '("Make" "make" TeX-run-command nil t))) 
+(eval-after-load "tex"
+  '(add-to-list 'TeX-command-list '("Make" "make" TeX-run-command nil t)))
 (add-to-list 'auto-mode-alist '("\\.tex\\'" . latex-mode))
 
 ;; C++ mode settings.
@@ -66,26 +66,27 @@
 
 ;; Web modes
 (remove-hook 'html-mode-hook 'turn-on-auto-fill)
-(add-to-list 'auto-mode-alist '("\\.json\\'" . web-mode))
 (require 'web-mode nil 'noerror)
+(add-to-list 'auto-mode-alist '("\\.json\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 (setq web-mode-engines-alist '(("html" . "\\.djhtml\\'")))
 (defun my-web-mode-hook () "Hooks for Web mode."
   (local-set-key (kbd "RET") 'newline-and-indent)
   (setq web-mode-markup-indent-offset 2)
-  (setq web-mode-code-indent-offset 4)
+  (setq web-mode-code-indent-offset 2)
   (setq-default indent-tabs-mode nil)
   (setq-default tab-width 2))
 (add-hook 'web-mode-hook 'my-web-mode-hook)
 
-;; (eval-after-load 'js2-mode
-;;   '(progn
-;;      (require 'js2-imenu-extras)
-;;      (add-to-list 'js2-imenu-available-frameworks 'react)
-;;      (add-to-list 'js2-imenu-enabled-frameworks 'react)))
+(eval-after-load 'js2-mode
+  '(progn
+     (require 'js2-imenu-extras)
+     (setq js2-basic-offset 2)
+     (add-to-list 'js2-imenu-available-frameworks 'react)
+     (add-to-list 'js2-imenu-enabled-frameworks 'react)))
 
 ;; Window navigation
 ;; See http://www.emacswiki.org/emacs/WindMove
