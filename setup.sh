@@ -22,5 +22,6 @@ echo "Setting up emacs..."
 ln -sf $HERE/emacs $HOME/.emacs
 ln -sf $HERE/emacs.d $HOME/.emacs.d
 
-echo "Lining cookiecutter..."
+echo "Linking others..."
 ln -sf $HERE/cookiecutterrc $HOME/.cookiecutterrc
+ln -sf $HERE/latexmkrc $HOME/.latexmkrc
