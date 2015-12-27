@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads nil "monky" "monky.el" (21719 16474 564676 513000))
+;;;### (autoloads nil "monky" "monky.el" (22143 57543 707360 929000))
 ;;; Generated autoloads from monky.el
 
 (autoload 'monky-status "monky" "\
@@ -13,7 +13,7 @@ Show the status of Hg repository.
 
 ;;;***
 
-;;;### (autoloads nil nil ("monky-pkg.el") (21719 16474 800445 599000))
+;;;### (autoloads nil nil ("monky-pkg.el") (22143 57543 862455 147000))
 
 ;;;***
 

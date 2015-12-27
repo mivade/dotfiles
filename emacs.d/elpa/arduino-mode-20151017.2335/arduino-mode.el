@@ -1,11 +1,11 @@
-;;; arduino-mode.el --- Major mode for the Arduino language
+;;; Arduino-mode.el --- Major mode for the Arduino language
 
 ;; Copyright (C) 2008  Christopher Grim
 
 ;; Author: Christopher Grim <christopher.grim@gmail.com>
 ;; Keywords: languages, arduino
-;; Version: 20140108.1602
-;; X-Original-Version: 1.0
+;; Package-Version: 20151017.2335
+;; Version: 1.0
 
 ;; This file is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -33,6 +33,7 @@
 (require 'cc-mode)
 
 (eval-when-compile
+  (require 'cl)
   (require 'cc-langs)
   (require 'cc-fonts)
   (require 'cc-menus))
@@ -46,31 +47,88 @@
                   (c-lang-const c-primitive-type-kwds)))
 
 (c-lang-defconst c-constant-kwds
-  arduino (append '("HIGH" "LOW" "INPUT" "OUTPUT")
-                  (c-lang-const c-constant-kwds)))
+  arduino (append
+           '("HIGH" "LOW"
+             "INPUT" "OUTPUT" "INPUT_PULLUP"
+             "LED_BUILTIN"
+             "true" "false")
+           (c-lang-const c-constant-kwds)))
 
 (c-lang-defconst c-simple-stmt-kwds
-  arduino (append '("pinMode" "digitalWrite" "digitalRead"                      ; Digital I/O
-                    "analogRead" "analogWrite"                                  ; Analog I/O
-                    "shiftOut" "pulseIn"                                        ; Advanced I/O
-                    "millis" "delay" "delayMicroseconds"                        ; Time
-                    "min" "max" "abs" "constrain" "map" "pow" "sq" "sqrt" "sin" ; Math
-                    "sin" "cos" "tan"                                           ; Trigonometry
-                    "randomSeed" "random"                                       ; Random Numbers
-                    "attachInterrupt" "detachInterrupt"                         ; External Interrupts
-                    "interrupts" "noInterrupts"                                 ; Interrupts
-                    "begin" "available" "read" "flush" "print" "println")       ; Serial Communication
-                  (c-lang-const c-simple-stmt-kwds)))
+  arduino (append
+           '(;; Digital I/O
+             "pinMode"
+             "digitalWrite"
+             "digitalRead"
+             ;; Analog I/O
+             "analogReference"
+             "analogRead"
+             "analogWrite"
+             ;; Due only
+             "analogReadResolution"
+             "analogWriteResolution"
+             ;; Advanced I/O
+             "tone"
+             "noTone"
+             "shiftOut"
+             "shiftIn"
+             "pulseIn"
+             ;; Time
+             "millis"
+             "micros"
+             "delay"
+             "delayMicroseconds"
+             ;; Math
+             "min"
+             "max"
+             "abs"
+             "constrain"
+             "map"
+             "pow"
+             "sqrt"
+             ;; Trigonometry
+             "sin"
+             "cos"
+             "tan"
+             ;; Random Numbers
+             "randomSeed"
+             "random"
+             ;; Bits and Bytes
+             "lowByte"
+             "highByte"
+             "bitRead"
+             "bitWrite"
+             "bitSet"
+             "bitClear"
+             "bit"
+             ;; External Interrupts
+             "attachInterrupt"
+             "detachInterrupt"
+             ;; Interrupts
+             "interrupts"
+             "noInterrupts")
+           (c-lang-const c-simple-stmt-kwds)))
 
 (c-lang-defconst c-primary-expr-kwds
-  arduino (append '("Serial")
-                  (c-lang-const c-primary-expr-kwds)))
+  arduino (append
+           '(;; Communication
+             "Serial"
+             ;; USB (Leonoardo based boards and Due only)
+             "Keyboard"
+             "Mouse")
+           (c-lang-const c-primary-expr-kwds)))
 
-(defgroup arduino nil "Arduino mode customizations")
+(defgroup arduino nil "Arduino mode customizations"
+  :group 'languages)
 
 (defcustom arduino-font-lock-extra-types nil
   "*List of extra types (aside from the type keywords) to recognize in Arduino mode.
 Each list item should be a regexp matching a single identifier." :group 'arduino)
+
+(defcustom arduino-executable "arduino"
+  "*The arduino executable"
+  :group 'arduino
+  :type 'string)
 
 (defconst arduino-font-lock-keywords-1 (c-lang-const c-matchers-1 arduino)
   "Minimal highlighting for Arduino mode.")
@@ -95,18 +153,19 @@ Each list item should be a regexp matching a single identifier." :group 'arduino
 
 (c-define-abbrev-table 'arduino-mode-abbrev-table
   ;; Keywords that if they occur first on a line might alter the
-  ;; syntactic context, and which therefore should trig reindentation
-  ;; when they are completed.
+  ;; syntactic context, and which therefore should trigger
+  ;; reindentation when they are completed.
   '(("else" "else" c-electric-continued-statement 0)
     ("while" "while" c-electric-continued-statement 0)))
 
-(defvar arduino-mode-map (let ((map (c-make-inherited-keymap)))
-                      ;; Add bindings which are only useful for Arduino
-                      map)
+(defvar arduino-mode-map
+  (let ((map (c-make-inherited-keymap)))
+    ;; Add bindings which are only useful for Arduino
+    map)
   "Keymap used in arduino-mode buffers.")
 
 (easy-menu-define arduino-menu arduino-mode-map "Arduino Mode Commands"
-                  (cons "Arduino" (c-lang-const c-mode-menu arduino)))
+  (cons "Arduino" (c-lang-const c-mode-menu arduino)))
 
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.pde\\'" . arduino-mode))
@@ -146,6 +205,10 @@ Key bindings:
   (run-hooks 'c-mode-common-hook)
   (run-hooks 'arduino-mode-hook)
   (c-update-modeline))
+
+(defun arduino-run-arduino ()
+  (interactive)
+  (start-file-process "arduino" () arduino-executable (buffer-file-name)))
 
 (provide 'arduino-mode)
 ;;; arduino-mode.el ends here
