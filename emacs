@@ -71,6 +71,7 @@
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 (setq web-mode-engines-alist '(("html" . "\\.djhtml\\'")))
 (defun my-web-mode-hook () "Hooks for Web mode."
@@ -84,7 +85,6 @@
 (eval-after-load 'js2-mode
   '(progn
      (require 'js2-imenu-extras)
-     (setq js2-basic-offset 2)
      (add-to-list 'js2-imenu-available-frameworks 'react)
      (add-to-list 'js2-imenu-enabled-frameworks 'react)))
 
@@ -118,6 +118,7 @@
  '(display-time-mode t)
  '(font-use-system-font t)
  '(inhibit-startup-screen t)
+ '(js2-basic-offset 2)
  '(python-indent-guess-indent-offset nil)
  '(safe-local-variable-values
    (quote
