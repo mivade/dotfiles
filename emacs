@@ -69,8 +69,8 @@
 (require 'web-mode nil 'noerror)
 (add-to-list 'auto-mode-alist '("\\.json\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-jsx-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 (defun my-web-mode-hook () "Hooks for Web mode."
@@ -82,12 +82,7 @@
   (setq-default indent-tabs-mode nil)
   (setq-default tab-width 2))
 (add-hook 'web-mode-hook 'my-web-mode-hook)
-
-(eval-after-load 'js2-mode
-  '(progn
-     (require 'js2-imenu-extras)
-     (add-to-list 'js2-imenu-available-frameworks 'react)
-     (add-to-list 'js2-imenu-enabled-frameworks 'react)))
+(add-hook 'js2-mode-hook (lambda () (electric-indent-local-mode 1)))
 
 ;; Window navigation
 ;; See http://www.emacswiki.org/emacs/WindMove
@@ -127,7 +122,8 @@
      (TeX-master . t)
      (TeX-engine . xetex)
      (TeX-PDF-mode . t))))
- '(show-paren-mode t))
+ '(show-paren-mode t)
+ '(web-mode-jsx-expression-padding 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
