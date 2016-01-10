@@ -62,7 +62,7 @@
 (epy-setup-ipython)
 (setq skeleton-pair nil) ; don't auto-add parentheses
 (setq epy-enable-ropemacs nil) ; it takes to long to load for each file...
-(add-hook 'python-mode-hook (lambda() (electric-indent-mode -1)))
+(add-hook 'python-mode-hook (lambda() (electric-indent-local-mode -1)))
 
 ;; Web modes
 (remove-hook 'html-mode-hook 'turn-on-auto-fill)
@@ -73,11 +73,12 @@
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
-(setq web-mode-engines-alist '(("html" . "\\.djhtml\\'")))
 (defun my-web-mode-hook () "Hooks for Web mode."
-  (local-set-key (kbd "RET") 'newline-and-indent)
+;  (local-set-key (kbd "RET") 'newline-and-indent)
+  (setq web-mode-engines-alist '(("html" . "\\.tmpl\\'")))
   (setq web-mode-markup-indent-offset 2)
   (setq web-mode-code-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
   (setq-default indent-tabs-mode nil)
   (setq-default tab-width 2))
 (add-hook 'web-mode-hook 'my-web-mode-hook)
