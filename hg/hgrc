@@ -37,3 +37,7 @@ shell = x-terminal-emulator
 [subpaths]
 http://iontrap@iontrap.phys.au.dk:5001/(.*) = http://iontrap@localhost:5001/\1
 http://iontrap.phys.au.dk:5001/(.*) = http://localhost:5001/\1
+
+[merge-tools]
+meld.executable = meld
+meld.args = $local $base $other -o $output
