@@ -73,15 +73,14 @@
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
-(defun my-web-mode-hook () "Hooks for Web mode."
-;  (local-set-key (kbd "RET") 'newline-and-indent)
-  (setq web-mode-engines-alist '(("html" . "\\.tmpl\\'")))
+(add-to-list 'web-mode-engine-file-regexps '("django" . "\\.html"))
+(add-hook 'web-mode-hook (lambda ()
+  ;;(setq web-mode-engines-alist '(("django" . "\\.html")))
   (setq web-mode-markup-indent-offset 2)
   (setq web-mode-code-indent-offset 2)
   (setq web-mode-css-indent-offset 2)
   (setq-default indent-tabs-mode nil)
-  (setq-default tab-width 2))
-(add-hook 'web-mode-hook 'my-web-mode-hook)
+  (setq-default tab-width 2)))
 (add-hook 'js2-mode-hook (lambda () (electric-indent-local-mode 1)))
 
 ;; Window navigation
