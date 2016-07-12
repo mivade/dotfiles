@@ -107,7 +107,7 @@ fi
 
 # Add local installations to the front of the PATH
 export CONDA_PATH=$HOME/miniconda3/bin
-export BASE_PATH=$HOME/bin:$HOME/.local/bin:$PATH
+export BASE_PATH=$HOME/bin:$HOME/.local/bin:/home/mvd/.cargo/bin:$PATH
 
 # Macros for switching between conda and system Python
 function condafy {
