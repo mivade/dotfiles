@@ -27,6 +27,16 @@
   (package-initialize)
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t))
 
+;; ido-mode
+(require 'ido)
+(ido-mode t)
+
+;; Autocompletion
+(require 'auto-complete)
+(require 'auto-complete-config)
+(ac-config-default)
+(global-auto-complete-mode t)
+
 ;; General text settings
 (add-hook 'after-init-hook 'global-flycheck-mode)
 (add-hook 'text-mode-hook 'auto-fill-mode)
@@ -54,11 +64,8 @@
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 
 ;; Python
-(load-file "~/.emacs.d/emacs-for-python/epy-init.el")
-(epy-setup-checker "pyflakes %f") ; enable on-the-fly code checking
-(epy-setup-ipython)
-(setq skeleton-pair nil) ; don't auto-add parentheses
-(setq epy-enable-ropemacs nil) ; it takes to long to load for each file...
+;; (setq skeleton-pair nil) ; don't auto-add parentheses
+(require 'python-mode)
 (add-hook 'python-mode-hook (lambda() (electric-indent-local-mode -1)))
 (add-hook 'rst-mode-hook (lambda() (electric-indent-local-mode -1)))
 
