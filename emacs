@@ -27,7 +27,8 @@
   (package-initialize)
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t))
 
-;; General text settings.
+;; General text settings
+(add-hook 'after-init-hook 'global-flycheck-mode)
 (add-hook 'text-mode-hook 'auto-fill-mode)
 (add-hook 'text-mode-hook 'flyspell-mode)
 (setq ispell-program-name "aspell")
