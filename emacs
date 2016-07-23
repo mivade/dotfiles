@@ -62,11 +62,11 @@
 (defun my-c-mode-common-hook ()
   (c-set-style "stroustrup"))
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+(add-hook 'c++-mode-hook (lambda() (setq flycheck-gcc-language-standard "c++11")))
 
 ;; Python
 ;; (setq skeleton-pair nil) ; don't auto-add parentheses
 (require 'python-mode)
-(add-hook 'python-mode-hook (lambda() (electric-indent-local-mode -1)))
 (add-hook 'rst-mode-hook (lambda() (electric-indent-local-mode -1)))
 
 ;; Window navigation
@@ -116,6 +116,9 @@
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(column-number-mode t)
  '(custom-enabled-themes (quote (deeper-blue)))
+ '(custom-safe-themes
+   (quote
+    ("b93ce589c81df2a0cf7e07d2b84d298105ce0ea189166239915530113d9c07aa" default)))
  '(display-time-mode t)
  '(font-use-system-font t)
  '(inhibit-startup-screen t)
