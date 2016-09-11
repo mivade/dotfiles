@@ -110,7 +110,8 @@ export TERM=xterm-256color
 
 # Add local installations to the front of the PATH
 export CONDA_PATH=$HOME/miniconda3/bin
-export BASE_PATH=$HOME/bin:$HOME/.local/bin:/home/mvd/.cargo/bin:$PATH
+export BASE_PATH="$HOME/bin:$HOME/.local/bin:/home/mvd/.cargo/bin:$PATH"
+export PATH="$PYENV_PATH:$PATH"
 
 # Macros for switching between conda and system Python
 function condafy {
@@ -119,6 +120,16 @@ function condafy {
 
 function noconda {
     export PATH=$BASE_PATH
+}
+
+# Shortcut for creating conda environments
+function cenv {
+    conda create -yn $(basename $(pwd)) python=3
+}
+
+# ... and to remove one
+function rmcenv {
+    conda remove -n $(basename $(pwd)) --all
 }
 
 # Use conda by default
