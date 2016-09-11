@@ -1,0 +1,4 @@
+# Atom: https://atom.io/
+# PPA: https://launchpad.net/~webupd8team/+archive/ubuntu/atom
+deb http://ppa.launchpad.net/webupd8team/atom/ubuntu trusty main
+deb-src http://ppa.launchpad.net/webupd8team/atom/ubuntu trusty main

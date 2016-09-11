@@ -1,0 +1,4 @@
+# http://docs.grafana.org/installation/debian/
+# To add key:
+#   $ curl https://packagecloud.io/gpg.key | sudo apt-key add -
+deb https://packagecloud.io/grafana/stable/debian/ wheezy main

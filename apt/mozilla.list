@@ -1,0 +1,3 @@
+# Debian Mozilla team apt archive
+# http://mozilla.debian.net/
+deb http://mozilla.debian.net/ jessie-backports firefox-release
