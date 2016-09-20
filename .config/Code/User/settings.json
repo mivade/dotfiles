@@ -1,0 +1,26 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.fontSize": 12,
+    "editor.trimAutoWhitespace": true,
+    "editor.renderIndentGuides": true,
+    "files.trimTrailingWhitespace": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "*.pyc": true,
+        "**/__pycache__": true,
+        "**/*~": true
+    },
+
+    "telemetry.enableTelemetry": false,
+
+    "git.autofetch": false,
+
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.lintOnSave": true,
+    "python.linting.lintOnTextChange": true
+}
