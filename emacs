@@ -4,6 +4,9 @@
 (global-font-lock-mode t)
 (set-face-foreground 'font-lock-comment-face "red")
 
+;; Hopefully never insert tab characters
+(setq-default indent-tabs-mode nil)
+
 ;; Transient mark mode (highlight marked text)
 (transient-mark-mode t)
 
