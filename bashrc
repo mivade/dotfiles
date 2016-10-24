@@ -137,3 +137,17 @@ condafy
 
 # Fix some node.js things
 export NODE_PATH=$NODE_PATH:$HOME/.local/lib/node_modules
+
+# OS X specific customizations
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # Enable color support with ls
+    export CLICOLOR=1
+    export LSCOLORS=ExFxBxDxCxegedabagacad
+
+    # Enable bash completion for common things. Assumes homebrew is installed.
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+        for completion in "git-completion.bash gcc"; do
+            source $(brew --prefix)/etc/bash_completion.d/$completion
+        done
+    fi
+fi
