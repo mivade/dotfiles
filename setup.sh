@@ -8,20 +8,21 @@ echo "Creating needed directories..."
 mkdir -p $HOME/bin
 
 echo "Linking bash files..."
-ln -sf $HERE/bashrc $HOME/.bashrc
-ln -sf $HERE/bash_aliases $HOME/.bash_aliases
+ln -sf $HERE/.bashrc $HOME
+ln -sf $HERE/.bash_aliases $HOME
 
-echo "Building and installing nanorc..."
+echo "Building and installing .nanorc..."
 cd nanorc; make install; cd -
-ln -sf $HERE/nanorc.nanorc $HOME/.nanorc
+ln -sf $HERE/.nanorc $HOME/.nanorc
 
 echo "Linking .screenrc..."
-ln -sf $HERE/screenrc $HOME/.screenrc
+ln -sf $HERE/.screenrc $HOME
 
 echo "Setting up emacs..."
-ln -sf $HERE/emacs $HOME/.emacs
-ln -sf $HERE/emacs.d $HOME/.emacs.d
+ln -sf $HERE/.emacs $HOME
+ln -sf $HERE/.emacs.d $HOME
 
 echo "Linking others..."
-ln -sf $HERE/cookiecutterrc $HOME/.cookiecutterrc
-ln -sf $HERE/latexmkrc $HOME/.latexmkrc
+ln -sf $HERE/.cookiecutterrc $HOME
+ln -sf $HERE/.latexmkrc $HOME
+ln -sf $HERE/.gitconfig $HOME
