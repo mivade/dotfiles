@@ -1,10 +1,10 @@
 *~
 *.elc
 *.pyc
-emacs.d/elpa/gnupg
-emacs.d/elpa/archives
-emacs.d/ac-comphist.dat
-emacs.d/eproject.lst
-emacs.d/ido.last
+.emacs.d/elpa/gnupg
+.emacs.d/elpa/archives
+.emacs.d/ac-comphist.dat
+.emacs.d/eproject.lst
+.emacs.d/ido.last
 ede-projects.el
 .config/Code/User/workspaceStorage
