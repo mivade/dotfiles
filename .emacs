@@ -149,6 +149,9 @@
     (("unread" :foreground "#aeee00")
      ("flagged" :foreground "#0a9dff")
      ("deleted" :foreground "#ff2c4b" :bold t))))
+ '(package-selected-packages
+   (quote
+    (magit zerodark-theme yaml-mode web-mode seti-theme rust-mode qml-mode python-mode powerline monky molokai-theme kivy-mode js2-mode jdee flycheck firecode-theme badwolf-theme auto-complete arduino-mode)))
  '(python-indent-guess-indent-offset nil)
  '(safe-local-variable-values
    (quote
