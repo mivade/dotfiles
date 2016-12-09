@@ -4,6 +4,10 @@
 
 HERE=$HOME/dotfiles
 
+echo "Setting up git submodules..."
+git submodule init
+git submodule update
+
 echo "Creating needed directories..."
 mkdir -p $HOME/bin
 
