@@ -125,12 +125,13 @@
 
 ;; Windows-specific configuration
 (if (eq system-type 'windows-nt)
-  (set-default-font "Consolas-9")
-  (setq visible-bell 1)
-  (setenv "PATH"
-    (concat
-     "C:/Program Files/Git/usr/bin" ";"
-     (getenv "PATH"))))
+  (progn
+    (set-default-font "Consolas-9")
+    (setq visible-bell 1)
+    (setenv "PATH"
+      (concat
+       "C:/Program Files/Git/usr/bin" ";"
+       (getenv "PATH")))))
 
 ;; Set default fonts depending on the platform
 ;;(if (not (eq window-system nil))
