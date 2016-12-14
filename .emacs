@@ -123,10 +123,19 @@
         (comment-or-uncomment-region beg end)))
 (global-set-key (kbd "C-/") 'comment-or-uncomment-region)
 
+;; Windows-specific configuration
+(if (eq system-type 'windows-nt)
+  (set-default-font "Consolas-9")
+  (setq visible-bell 1)
+  (setenv "PATH"
+    (concat
+     "C:/Program Files/Git/usr/bin" ";"
+     (getenv "PATH"))))
+
 ;; Set default fonts depending on the platform
-(if (not (eq window-system nil))
-  (if (eq system-type 'windows-nt)
-    (set-default-font "Consolas-9")))
+;;(if (not (eq window-system nil))
+;;  (if (eq system-type 'windows-nt)
+;;    (set-default-font "Consolas-9")))
 
 ;; Stuff set with customize menus
 (custom-set-variables
