@@ -30,6 +30,13 @@
   (package-initialize)
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t))
 
+;; Fill column indicator
+(require 'fill-column-indicator)
+(setq fci-rule-width 1)
+;;(setq fci-rule-color "gridColor")
+(define-globalized-minor-mode my-global-fci-mode fci-mode turn-on-fci-mode)
+(my-global-fci-mode 1)
+
 ;; ido-mode
 (require 'ido)
 (ido-mode t)
