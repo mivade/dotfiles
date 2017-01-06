@@ -152,10 +152,10 @@
    [unspecified "#151718" "#CE4045" "#9FCA56" "#DCCD69" "#55B5DB" "#A074C4" "#55B5DB" "#D4D7D6"])
  '(column-number-mode t)
  '(cursor-type (quote bar))
- '(custom-enabled-themes (quote (firecode)))
+ '(custom-enabled-themes (quote (spacemacs-dark)))
  '(custom-safe-themes
    (quote
-    ("b571f92c9bfaf4a28cb64ae4b4cdbda95241cd62cf07d942be44dc8f46c491f4" "18a33cdb764e4baf99b23dcd5abdbf1249670d412c6d3a8092ae1a7b211613d5" "bffa9e9d8c1af5456a2a66957c5efe7dac080b5deca30ece7d41b96e966d3651" "94ba29363bfb7e06105f68d72b268f85981f7fba2ddef89331660033101eb5e5" "b93ce589c81df2a0cf7e07d2b84d298105ce0ea189166239915530113d9c07aa" default)))
+    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "b571f92c9bfaf4a28cb64ae4b4cdbda95241cd62cf07d942be44dc8f46c491f4" "18a33cdb764e4baf99b23dcd5abdbf1249670d412c6d3a8092ae1a7b211613d5" "bffa9e9d8c1af5456a2a66957c5efe7dac080b5deca30ece7d41b96e966d3651" "94ba29363bfb7e06105f68d72b268f85981f7fba2ddef89331660033101eb5e5" "b93ce589c81df2a0cf7e07d2b84d298105ce0ea189166239915530113d9c07aa" default)))
  '(display-time-mode t)
  '(font-use-system-font t)
  '(inhibit-startup-screen t)
@@ -167,7 +167,7 @@
      ("deleted" :foreground "#ff2c4b" :bold t))))
  '(package-selected-packages
    (quote
-    (magit zerodark-theme yaml-mode web-mode seti-theme rust-mode qml-mode python-mode powerline monky molokai-theme kivy-mode js2-mode jdee flycheck firecode-theme badwolf-theme auto-complete arduino-mode)))
+    (fill-column-indicator spacemacs-theme evil magit zerodark-theme yaml-mode web-mode seti-theme rust-mode qml-mode python-mode powerline monky molokai-theme kivy-mode js2-mode jdee flycheck firecode-theme badwolf-theme auto-complete arduino-mode)))
  '(python-indent-guess-indent-offset nil)
  '(safe-local-variable-values
    (quote
@@ -177,3 +177,9 @@
      (TeX-PDF-mode . t))))
  '(show-paren-mode t)
  '(web-mode-jsx-expression-padding 2))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
