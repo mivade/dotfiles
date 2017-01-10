@@ -30,7 +30,8 @@
   (package-initialize)
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t))
 
-;; Fill column indicator
+;; Fill column
+(setq fill-column 80)
 (require 'fill-column-indicator)
 (setq fci-rule-width 1)
 ;;(setq fci-rule-color "gridColor")
