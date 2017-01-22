@@ -71,14 +71,15 @@
 
 ;; C/C++
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
-;; (defun my-c-mode-common-hook ()
-;;   (c-set-style "stroustrup"))
-;; (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+(defun my-c-mode-common-hook ()
+  (c-set-style "stroustrup")
+  (c-set-offset 'innamespace 0))
+(add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 (defun my-c++-mode-hook ()
   (setq flycheck-gcc-language-standard "c++11")
-  (setq flycheck-clang-language-standard "c++11"))
+  (setq flycheck-clang-language-standard "c++11")
+  (setq c-bassic-offset 4))
 (add-hook 'c++-mode-hook 'my-c++-mode-hook)
-(c-set-offset 'innamespace 0)
 
 
 ;; Python
