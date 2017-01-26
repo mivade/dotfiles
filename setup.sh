@@ -15,16 +15,15 @@ echo "Linking bash files..."
 ln -sf $HERE/.bashrc $HOME
 ln -sf $HERE/.bash_aliases $HOME
 
-echo "Building and installing .nanorc..."
-cd nanorc; make install; cd -
-ln -sf $HERE/.nanorc $HOME/.nanorc
-
 echo "Linking .screenrc..."
 ln -sf $HERE/.screenrc $HOME
 
-echo "Setting up emacs..."
+echo "Setting up editors..."
+cd nanorc; make install; cd -
+ln -sf $HERE/.nanorc $HOME/.nanorc
 ln -sf $HERE/.emacs $HOME
 ln -sf $HERE/.emacs.d $HOME
+ln -sf $HERE/.vimrc $HOME
 
 echo "Linking others..."
 ln -sf $HERE/.cookiecutterrc $HOME
