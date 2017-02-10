@@ -47,6 +47,7 @@
 (require 'auto-complete-config)
 (ac-config-default)
 (global-auto-complete-mode t)
+(dumb-jump-mode)
 
 ;; General text settings
 (add-hook 'after-init-hook 'global-flycheck-mode)
@@ -54,6 +55,12 @@
 (add-hook 'text-mode-hook 'flyspell-mode)
 (setq ispell-program-name "aspell")
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; Tree view
+(require 'neotree)
+;(require 'all-the-icons)
+;(setq neo-theme (if (display-graphic-p) 'icons))
+(global-set-key [f8] 'neotree-toggle)
 
 ;; org-mode
 (setq org-log-done t)
@@ -178,7 +185,7 @@
      ("deleted" :foreground "#ff2c4b" :bold t))))
  '(package-selected-packages
    (quote
-    (fill-column-indicator spacemacs-theme evil magit zerodark-theme yaml-mode web-mode seti-theme rust-mode qml-mode python-mode powerline monky molokai-theme kivy-mode js2-mode jdee flycheck firecode-theme badwolf-theme auto-complete arduino-mode)))
+    (neotree markdown-mode fill-column-indicator spacemacs-theme magit zerodark-theme yaml-mode web-mode seti-theme rust-mode qml-mode python-mode powerline monky molokai-theme kivy-mode js2-mode jdee flycheck firecode-theme badwolf-theme auto-complete arduino-mode)))
  '(python-indent-guess-indent-offset nil)
  '(safe-local-variable-values
    (quote
