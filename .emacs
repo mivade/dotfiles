@@ -56,6 +56,9 @@
 (setq ispell-program-name "aspell")
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; ediff
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+
 ;; Tree view
 (require 'neotree)
 ;(require 'all-the-icons)
