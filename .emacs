@@ -122,7 +122,9 @@
   (setq web-mode-css-indent-offset 2)
   (setq-default indent-tabs-mode nil)
   (setq-default tab-width 2)))
-(add-hook 'js2-mode-hook (lambda () (electric-indent-local-mode 1)))
+(add-hook 'js2-mode-hook (lambda ()
+  (electric-indent-local-mode 1)
+  (setq js2-basic-offset 2)))
 
 ;; Markdown
 (autoload 'markdown-mode "markdown-mode"
