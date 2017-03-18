@@ -4,3 +4,6 @@
 [submodule "cookiecutters/cookiecutter-pypackage"]
 	path = cookiecutters/cookiecutter-pypackage
 	url = https://github.com/mivade/cookiecutter-pypackage.git
+[submodule "cookiecutters/cookiecutter-tornado-app"]
+	path = cookiecutters/cookiecutter-tornado-app
+	url = git@github.com:mivade/cookiecutter-tornado-app.git
