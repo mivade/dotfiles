@@ -93,7 +93,7 @@
 
 ;; Python
 ;; (setq skeleton-pair nil) ; don't auto-add parentheses
-(require 'python-mode)
+(autoload 'python-mode "python-mode" "Python Mode" t)
 (add-hook 'rst-mode-hook (lambda() (electric-indent-local-mode -1)))
 
 ;; Window navigation
@@ -106,32 +106,34 @@
 
 ;; Web modes
 (remove-hook 'html-mode-hook 'turn-on-auto-fill)
-(require 'web-mode nil 'noerror)
+(autoload 'web-mode "web-mode" "Web mode" t)
 (add-to-list 'auto-mode-alist '("\\.json\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-jsx-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
-(add-to-list 'web-mode-engine-file-regexps '("django" . "\\.html"))
 (add-hook 'web-mode-hook (lambda ()
   ;;(setq web-mode-engines-alist '(("django" . "\\.html")))
   (setq web-mode-markup-indent-offset 2)
   (setq web-mode-code-indent-offset 2)
   (setq web-mode-css-indent-offset 2)
   (setq-default indent-tabs-mode nil)
-  (setq-default tab-width 2)))
+  (setq-default tab-width 2))
+  ;; FIXME
+  ;;(add-to-list 'web-mode-engine-file-regexps '("django" . "\\.html"))
+)
 (add-hook 'js2-mode-hook (lambda ()
   (electric-indent-local-mode 1)
   (setq js2-basic-offset 2)))
 
 ;; Markdown
-(autoload 'markdown-mode "markdown-mode"
-  "Major mode for editing Markdown files" t)
+(autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
 ;; Arduino mode
-(require 'arduino-mode nil 'noerror)
+(autoload 'arduino-mode "arduino-mode" "Arduino mode" t)
+(add-to-list 'auto-mode-alist '("\\.ino\\'" . arduino-mode))
 
 ;; Shortcut for commenting/uncommenting
 ;; Taken from https://stackoverflow.com/questions/9688748/emacs-comment-uncomment-current-line#9697222
