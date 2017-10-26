@@ -2,7 +2,7 @@
 
 ;; Syntax highlighting.
 (global-font-lock-mode t)
-(set-face-foreground 'font-lock-comment-face "red")
+;(set-face-foreground 'font-lock-comment-face "red")
 
 ;; Hopefully never insert tab characters
 (setq-default indent-tabs-mode nil)
@@ -90,7 +90,6 @@
   (setq flycheck-clang-language-standard "c++11")
   (setq c-bassic-offset 4))
 (add-hook 'c++-mode-hook 'my-c++-mode-hook)
-
 
 ;; Python
 ;; (setq skeleton-pair nil) ; don't auto-add parentheses
