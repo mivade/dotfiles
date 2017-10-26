@@ -66,7 +66,7 @@
 (global-set-key [f8] 'neotree-toggle)
 
 ;; org-mode
-(setq org-log-done t)
+(setq org-log-done t)  ; capture timestamp when a task is set to DONE
 
 ;; LaTeX
 (autoload 'latex-mode "latex-mode" "AUCTeX" t)
