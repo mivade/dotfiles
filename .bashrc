@@ -109,17 +109,15 @@ fi
 export TERM=xterm-256color
 
 # Add local installations to the front of the PATH
-export CONDA_PATH=$HOME/miniconda3/bin
 export BASE_PATH="$HOME/bin:$HOME/.local/bin:/home/mvd/.cargo/bin:$PATH"
-export PATH="$PYENV_PATH:$PATH"
 
 # Macros for switching between conda and system Python
 function condafy {
-    export PATH=$CONDA_PATH:$BASE_PATH
+    conda activate
 }
 
 function noconda {
-    export PATH=$BASE_PATH
+    conda deactivate
 }
 
 # Shortcut for creating conda environments
@@ -131,9 +129,6 @@ function cenv {
 function rmcenv {
     conda remove -n $(basename $(pwd)) --all
 }
-
-# Use conda by default
-condafy
 
 # Fix some node.js things
 export NODE_PATH=$NODE_PATH:$HOME/.local/lib/node_modules
@@ -155,3 +150,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     # system version
     alias emacs=/Applications/Emacs.app/Contents/MacOS/Emacs
 fi
+
+# Use conda by default
+. /home/mvd/miniconda3/etc/profile.d/conda.sh
+condafy
+
