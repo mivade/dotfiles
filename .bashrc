@@ -152,6 +152,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 # Use conda by default
-. /home/mvd/miniconda3/etc/profile.d/conda.sh
+. $HOME/miniconda3/etc/profile.d/conda.sh
 condafy
 
