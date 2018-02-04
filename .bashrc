@@ -153,5 +153,4 @@ fi
 
 # Use conda by default
 . $HOME/miniconda3/etc/profile.d/conda.sh
-condafy
 
