@@ -135,6 +135,9 @@ export NODE_PATH=$NODE_PATH:$HOME/.local/lib/node_modules
 
 # OS X specific customizations
 if [[ "$OSTYPE" == "darwin"* ]]; then
+    # Ensure /usr/local/bin is in the path
+    export PATH=$PATH:/usr/local/bin
+
     # Enable color support with ls
     export CLICOLOR=1
     export LSCOLORS=ExFxBxDxCxegedabagacad
