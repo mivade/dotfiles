@@ -113,7 +113,7 @@ export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
 # Macros for switching between conda and system Python
 function condafy {
-    conda activate
+    conda activate base
 }
 
 function noconda {
@@ -154,6 +154,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     alias emacs=/Applications/Emacs.app/Contents/MacOS/Emacs
 fi
 
-# Use conda by default
+# Enable conda
 . $HOME/miniconda3/etc/profile.d/conda.sh
 
