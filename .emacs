@@ -34,9 +34,11 @@
 (setq-default fill-column 80)
 (require 'fill-column-indicator)
 (setq fci-rule-width 1)
-;;(setq fci-rule-color "gridColor")
-(define-globalized-minor-mode my-global-fci-mode fci-mode turn-on-fci-mode)
-(my-global-fci-mode 1)
+(add-hook 'c-mode-common-hook 'fci-mode)
+(add-hook 'python-mode-hook 'fci-mode)
+;(setq fci-rule-color "gridColor")
+;(define-globalized-minor-mode my-global-fci-mode fci-mode turn-on-fci-mode)
+;(my-global-fci-mode 1)
 
 ;; ido-mode
 (require 'ido)
