@@ -2,6 +2,8 @@
 # Setup links and other basic common functionality for a new
 # environment.
 
+set -e
+
 HERE=$HOME/dotfiles
 
 echo "Setting up git submodules..."
@@ -19,7 +21,7 @@ echo "Linking .screenrc..."
 ln -sf $HERE/.screenrc $HOME
 
 echo "Setting up editors..."
-cd nanorc; make install; cd -
+cd nanorc; ./install.sh; cd -
 ln -sf $HERE/.nanorc $HOME/.nanorc
 ln -sf $HERE/.emacs $HOME
 ln -sf $HERE/.emacs.d $HOME

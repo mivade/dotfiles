@@ -1,3 +1,3 @@
-# dotfiles #
+# dotfiles
 
-A poorly-named collection of configuration files uesd by me.
+Configuration and other common files uesd by me.
