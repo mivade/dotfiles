@@ -1,9 +1,9 @@
 [submodule "nanorc"]
 	path = nanorc
-	url = https://github.com/nanorc/nanorc.git
+	url = git@github.com:nanorc/nanorc.git
 [submodule "cookiecutters/cookiecutter-pypackage"]
 	path = cookiecutters/cookiecutter-pypackage
-	url = https://github.com/mivade/cookiecutter-pypackage.git
+	url = git@github.com:mivade/cookiecutter-pypackage.git
 [submodule "cookiecutters/cookiecutter-tornado-app"]
 	path = cookiecutters/cookiecutter-tornado-app
 	url = git@github.com:mivade/cookiecutter-tornado-app.git
