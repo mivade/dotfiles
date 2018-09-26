@@ -109,7 +109,7 @@ fi
 export TERM=xterm-256color
 
 # Add local installations to the front of the PATH
-export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
 # Macros for switching between conda and system Python
 function condafy {
