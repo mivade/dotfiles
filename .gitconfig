@@ -15,7 +15,7 @@
 	default = simple
 [core]
 	editor = vim
-	excludesfile = "~/dotfiles/git/gitignore"
+	excludesfile = "~/dotfiles/.gitignore"
 	autocrlf = input
 [credential]
 	helper = store
