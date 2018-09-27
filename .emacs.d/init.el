@@ -101,34 +101,17 @@
 ;; org-mode
 (setq org-log-done t)  ; capture timestamp when a task is set to DONE
 
-;; LaTeX
-(autoload 'latex-mode "latex-mode" "AUCTeX" t)
-(add-to-list 'auto-mode-alist '("\\.tex\\'" . latex-mode))
-(add-hook 'LaTeX-mode-hook
-	  (lambda nil (set-face-foreground 'font-latex-sedate-face "green")))
-(add-hook 'LaTeX-mode-hook 'latex-math-mode)
-(add-hook 'LaTeX-mode-hook 'turn-on-reftex
-          (setq reftex-plug-into-AUCTeX t))
-(eval-after-load "tex"
-  '(add-to-list 'TeX-command-list '("Make" "make" TeX-run-command nil t)))
+;; LANGUAGE-SPECIFIC SETTINGS
+;; --------------------------
 
-;; C/C++
-(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
-(defun my-c-mode-common-hook ()
-  (c-set-style "stroustrup")
-  (c-set-offset 'innamespace 0)
-  (c-set-offset 'substatement-open 0)
-  (setq c-basic-offset 4))
-(add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
-(defun my-c++-mode-hook ()
-  (setq flycheck-gcc-language-standard "c++14")
-  (setq flycheck-clang-language-standard "c++14"))
-(add-hook 'c++-mode-hook 'my-c++-mode-hook)
+; see also https://www.emacswiki.org/emacs/LoadingLispFiles for furthersimplifications
 
-;; Python
-;; (setq skeleton-pair nil) ; don't auto-add parentheses
-(autoload 'python-mode "python-mode" "Python Mode" t)
-(add-hook 'rst-mode-hook (lambda() (electric-indent-local-mode -1)))
+(load "~/.emacs.d/user/arduino.el")
+(load "~/.emacs.d/user/ccpp.el")
+(load "~/.emacs.d/user/latex.el")
+(load "~/.emacs.d/user/markdown.el")
+(load "~/.emacs.d/user/python.el")
+(load "~/.emacs.d/user/web.el")
 
 ;; Window navigation
 ;; See http://www.emacswiki.org/emacs/WindMove
@@ -137,37 +120,6 @@
 ;; default keybindings.
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings 'meta))
-
-;; Web modes
-(remove-hook 'html-mode-hook 'turn-on-auto-fill)
-(autoload 'web-mode "web-mode" "Web mode" t)
-(add-to-list 'auto-mode-alist '("\\.json\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-jsx-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
-(add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
-(add-hook 'web-mode-hook (lambda ()
-  ;;(setq web-mode-engines-alist '(("django" . "\\.html")))
-  (setq web-mode-markup-indent-offset 2)
-  (setq web-mode-code-indent-offset 2)
-  (setq web-mode-css-indent-offset 2)
-  (setq-default indent-tabs-mode nil)
-  (setq-default tab-width 2))
-  ;; FIXME
-  ;;(add-to-list 'web-mode-engine-file-regexps '("django" . "\\.html"))
-)
-(add-hook 'js2-mode-hook (lambda ()
-  (electric-indent-local-mode 1)
-  (setq js2-basic-offset 2)))
-
-;; Markdown
-(autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
-(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-
-;; Arduino mode
-(autoload 'arduino-mode "arduino-mode" "Arduino mode" t)
-(add-to-list 'auto-mode-alist '("\\.ino\\'" . arduino-mode))
 
 ;; Shortcut for commenting/uncommenting
 ;; Taken from https://stackoverflow.com/questions/9688748/emacs-comment-uncomment-current-line#9697222
@@ -195,3 +147,17 @@
 ;;(if (not (eq window-system nil))
 ;;  (if (eq system-type 'windows-nt)
 ;;    (set-default-font "Consolas-9")))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (zerodark-theme yaml-mode web-mode spacemacs-theme rust-mode qml-mode python-mode neotree molokai-theme material-theme markdown-mode magit js2-mode jinja2-mode flycheck firecode-theme fill-column-indicator dumb-jump better-defaults auto-complete arduino-mode))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
