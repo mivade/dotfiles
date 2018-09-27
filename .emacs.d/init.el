@@ -4,16 +4,18 @@
 ;; - https://realpython.com/emacs-the-best-python-editor/
 
 ;; TODO
-;; - Move initialization to ~/.emacs.d/init.el
 ;; - Split some configuration out to other files
 
-;; Emacs package management
+;; PACKAGING
+;; ---------
+
 (when (>= emacs-major-version 24)
   (require 'package)
   (package-initialize)
   (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t))
   (when (not package-archive-contents)
     (package-refresh-contents))
+
 (defvar myPackages
   '(arduino-mode
     auto-complete
@@ -37,14 +39,17 @@
     yaml-mode
     zerodark-theme ; medium-contrast dark theme
     ))
+
 (mapc #'(lambda (package)
   (unless (package-installed-p package)
     (package-install package)))
   myPackages)
 
+;; GENERAL SETTINGS
+;; ----------------
+
 ;; Syntax highlighting.
 (global-font-lock-mode t)
-;(set-face-foreground 'font-lock-comment-face "red")
 
 ;; Transient mark mode (highlight marked text)
 (transient-mark-mode t)
@@ -55,8 +60,6 @@
       (set-keyboard-coding-system 'utf-8)))
 
 ;; Status line settings
-(setq display-time-24hr-format t)
-(display-time)
 (column-number-mode t)
 
 ;; Mouse support.
