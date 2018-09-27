@@ -54,11 +54,6 @@
 ;; Transient mark mode (highlight marked text)
 (transient-mark-mode t)
 
-;; Enable UTF-8
-(if (not (eq window-system 'x))
-    (progn
-      (set-keyboard-coding-system 'utf-8)))
-
 ;; Status line settings
 (column-number-mode t)
 
