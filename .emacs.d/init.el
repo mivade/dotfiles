@@ -3,9 +3,6 @@
 ;; References:
 ;; - https://realpython.com/emacs-the-best-python-editor/
 
-;; TODO
-;; - Split some configuration out to other files
-
 ;; PACKAGING
 ;; ---------
 
@@ -98,21 +95,6 @@
 ;(setq neo-theme (if (display-graphic-p) 'icons))
 (global-set-key [f8] 'neotree-toggle)
 
-;; org-mode
-(setq org-log-done t)  ; capture timestamp when a task is set to DONE
-
-;; LANGUAGE-SPECIFIC SETTINGS
-;; --------------------------
-
-; see also https://www.emacswiki.org/emacs/LoadingLispFiles for furthersimplifications
-
-(load "~/.emacs.d/user/arduino.el")
-(load "~/.emacs.d/user/ccpp.el")
-(load "~/.emacs.d/user/latex.el")
-(load "~/.emacs.d/user/markdown.el")
-(load "~/.emacs.d/user/python.el")
-(load "~/.emacs.d/user/web.el")
-
 ;; Window navigation
 ;; See http://www.emacswiki.org/emacs/WindMove
 ;;
@@ -133,7 +115,24 @@
         (comment-or-uncomment-region beg end)))
 (global-set-key (kbd "C-/") 'comment-or-uncomment-region)
 
-;; Windows-specific configuration
+;; org-mode
+(setq org-log-done t)  ; capture timestamp when a task is set to DONE
+
+;; LANGUAGE-SPECIFIC SETTINGS
+;; --------------------------
+
+; see also https://www.emacswiki.org/emacs/LoadingLispFiles for furthersimplifications
+
+(load "~/.emacs.d/user/arduino.el")
+(load "~/.emacs.d/user/ccpp.el")
+(load "~/.emacs.d/user/latex.el")
+(load "~/.emacs.d/user/markdown.el")
+(load "~/.emacs.d/user/python.el")
+(load "~/.emacs.d/user/web.el")
+
+;; WINDOWS-SPECIFIC SETTINGS
+;; -------------------------
+
 (if (eq system-type 'windows-nt)
   (progn
     (set-default-font "Consolas-9")
@@ -142,6 +141,9 @@
       (concat
        "C:/Program Files/Git/usr/bin" ";"
        (getenv "PATH")))))
+
+;; STUFF SET BY EMACS
+;; ------------------
 
 ;; Set default fonts depending on the platform
 ;;(if (not (eq window-system nil))
