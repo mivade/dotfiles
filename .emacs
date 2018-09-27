@@ -1,11 +1,50 @@
 ;; -*- emacs-lisp -*-
 
+;; References:
+;; - https://realpython.com/emacs-the-best-python-editor/
+
+;; TODO
+;; - Move initialization to ~/.emacs.d/init.el
+;; - Split some configuration out to other files
+
+;; Emacs package management
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (package-initialize)
+  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t))
+  (when (not package-archive-contents)
+    (package-refresh-contents))
+(defvar myPackages
+  '(arduino-mode
+    auto-complete
+    better-defaults
+    dumb-jump
+    fill-column-indicator
+    firecode-theme ; high-contrast dark theme
+    flycheck
+    jinja2-mode
+    js2-mode
+    magit
+    markdown-mode
+    material-theme
+    molokai-theme ; monokai-like theme
+    neotree ; file tree
+    python-mode
+    qml-mode
+    rust-mode
+    spacemacs-theme
+    web-mode
+    yaml-mode
+    zerodark-theme ; medium-contrast dark theme
+    ))
+(mapc #'(lambda (package)
+  (unless (package-installed-p package)
+    (package-install package)))
+  myPackages)
+
 ;; Syntax highlighting.
 (global-font-lock-mode t)
 ;(set-face-foreground 'font-lock-comment-face "red")
-
-;; Hopefully never insert tab characters
-(setq-default indent-tabs-mode nil)
 
 ;; Transient mark mode (highlight marked text)
 (transient-mark-mode t)
@@ -24,12 +63,6 @@
 (xterm-mouse-mode t)
 (mouse-wheel-mode t)
 
-;; Emacs package management
-(when (>= emacs-major-version 24)
-  (require 'package)
-  (package-initialize)
-  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t))
-
 ;; Fill column
 (setq-default fill-column 80)
 (require 'fill-column-indicator)
@@ -41,8 +74,8 @@
 ;(my-global-fci-mode 1)
 
 ;; ido-mode
-(require 'ido)
-(ido-mode t)
+;; (require 'ido)
+;; (ido-mode t)
 
 ;; Autocompletion
 (require 'auto-complete)
