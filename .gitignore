@@ -1,8 +1,7 @@
 *~
 *.elc
 *.pyc
-.emacs.d/elpa/gnupg
-.emacs.d/elpa/archives
+.emacs.d/elpa/
 .emacs.d/ac-comphist.dat
 .emacs.d/eproject.lst
 .emacs.d/ido.last
