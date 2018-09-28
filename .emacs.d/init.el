@@ -43,11 +43,15 @@
     (package-install package)))
   myPackages)
 
-;; GENERAL SETTINGS
-;; ----------------
+;; LOOK AND FEEL
+;; -------------
 
-;; Syntax highlighting.
+;; Don't show startup message
+(setq inhibit-startup-message t)
+
+;; Set color theme
 (global-font-lock-mode t)
+(load-theme 'firecode t)
 
 ;; Transient mark mode (highlight marked text)
 (transient-mark-mode t)
