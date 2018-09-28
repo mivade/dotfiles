@@ -10,6 +10,11 @@ echo "Setting up git submodules..."
 git submodule init
 git submodule update
 
+if [[ `uname` == "Darwin" ]]; then
+    echo "Configuring gitk..."
+    ln -sf $HERE/.gitk $HOME
+fi
+
 echo "Creating needed directories..."
 mkdir -p $HOME/bin
 
