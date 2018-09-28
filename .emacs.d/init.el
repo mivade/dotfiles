@@ -17,6 +17,7 @@
   '(arduino-mode
     auto-complete
     better-defaults
+    csv-mode
     dumb-jump
     fill-column-indicator
     firecode-theme ; high-contrast dark theme
@@ -145,21 +146,5 @@
 ;; STUFF SET BY EMACS
 ;; ------------------
 
-;; Set default fonts depending on the platform
-;;(if (not (eq window-system nil))
-;;  (if (eq system-type 'windows-nt)
-;;    (set-default-font "Consolas-9")))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (zerodark-theme yaml-mode web-mode spacemacs-theme rust-mode qml-mode python-mode neotree molokai-theme material-theme markdown-mode magit js2-mode jinja2-mode flycheck firecode-theme fill-column-indicator dumb-jump better-defaults auto-complete arduino-mode))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(setq custom-file "~/.emacs.d/customize.el")
+(when (file-exists-p custom-file) (load custom-file))

@@ -2,6 +2,7 @@
 *.elc
 *.pyc
 .emacs.d/auto-save-list/
+.emacs.d/customize.el
 .emacs.d/elpa/
 .emacs.d/ac-comphist.dat
 .emacs.d/eproject.lst
