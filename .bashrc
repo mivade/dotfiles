@@ -112,26 +112,15 @@ export TERM=xterm-256color
 export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
 # Macros for switching between conda and system Python
-function condafy {
-    conda activate base
-}
-
-function noconda {
-    conda deactivate
-}
+alias condafy="conda activate base"
+alias noconda="conda deactivate"
 
 # Activate a conda environment named the same as the current directory
 alias conact="conda activate $(basename $(pwd))"
 
-# Shortcut for creating conda environments
-function cenv {
-    conda create -yn $(basename $(pwd)) python=3
-}
-
-# ... and to remove one
-function rmcenv {
-    conda remove -n $(basename $(pwd)) --all
-}
+# Shortcut for creating and removing conda environments
+alias cenv="conda create -yn $(basename $(pwd)) python=3"
+alias rmcenv="conda remove -n $(basename $(pwd)) --all"
 
 # Fix some node.js things
 export NODE_PATH=$NODE_PATH:$HOME/.local/lib/node_modules
