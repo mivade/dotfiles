@@ -120,6 +120,9 @@ function noconda {
     conda deactivate
 }
 
+# Activate a conda environment named the same as the current directory
+alias conact="conda activate $(basename $(pwd))"
+
 # Shortcut for creating conda environments
 function cenv {
     conda create -yn $(basename $(pwd)) python=3
