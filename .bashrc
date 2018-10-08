@@ -154,6 +154,18 @@ export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 # ssh-add -l > /dev/null || ssh-add
 
 # -----------------------------------------------------------------------------
+# UTILITIES
+# -----------------------------------------------------------------------------
+
+function gitignore() {
+    if [ -z $1 ]; then
+	ls $HOME/dotfiles/gitignore
+    else
+	cat $HOME/dotfiles/gitignore/$1.gitignore
+    fi
+}
+
+# -----------------------------------------------------------------------------
 # CONDA
 # -----------------------------------------------------------------------------
 
@@ -166,11 +178,12 @@ function conact() {
     conda activate $(basename $(pwd))
 }
 
-# Shortcuts for creating and removing conda environments
+# Create a conda environment for the current directory
 function cenv() {
     conda create -yn $(basename $(pwd)) python=3
 }
 
+# Remove current directory's conda environment
 function rmcenv() {
     conda remove -n $(basename $(pwd)) --all
 }
