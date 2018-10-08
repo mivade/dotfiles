@@ -116,11 +116,18 @@ alias condafy="conda activate base"
 alias noconda="conda deactivate"
 
 # Activate a conda environment named the same as the current directory
-alias conact="conda activate $(basename $(pwd))"
+function conact() {
+    conda activate $(basename $(pwd))
+}
 
-# Shortcut for creating and removing conda environments
-alias cenv="conda create -yn $(basename $(pwd)) python=3"
-alias rmcenv="conda remove -n $(basename $(pwd)) --all"
+# Shortcuts for creating and removing conda environments
+function cenv() {
+    conda create -yn $(basename $(pwd)) python=3
+}
+
+function rmcenv() {
+    conda remove -n $(basename $(pwd)) --all
+}
 
 # Fix some node.js things
 export NODE_PATH=$NODE_PATH:$HOME/.local/lib/node_modules
