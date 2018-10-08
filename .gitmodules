@@ -7,3 +7,6 @@
 [submodule "cookiecutters/cookiecutter-tornado-app"]
 	path = cookiecutters/cookiecutter-tornado-app
 	url = git@github.com:mivade/cookiecutter-tornado-app.git
+[submodule "gitignore"]
+	path = gitignore
+	url = git@github.com:mivade/gitignore.git
