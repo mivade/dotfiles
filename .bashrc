@@ -108,31 +108,17 @@ fi
 # Better terminal color support
 export TERM=xterm-256color
 
-# Add local installations to the front of the PATH
+# -----------------------------------------------------------------------------
+# PATH
+# -----------------------------------------------------------------------------
+
 export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
-
-# Macros for switching between conda and system Python
-alias condafy="conda activate base"
-alias noconda="conda deactivate"
-
-# Activate a conda environment named the same as the current directory
-function conact() {
-    conda activate $(basename $(pwd))
-}
-
-# Shortcuts for creating and removing conda environments
-function cenv() {
-    conda create -yn $(basename $(pwd)) python=3
-}
-
-function rmcenv() {
-    conda remove -n $(basename $(pwd)) --all
-}
-
-# Fix some node.js things
 export NODE_PATH=$NODE_PATH:$HOME/.local/lib/node_modules
 
-# OS X specific customizations
+# -----------------------------------------------------------------------------
+# OS-SPECIFIC CONFIGURATION
+# -----------------------------------------------------------------------------
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # Ensure /usr/local/bin is in the path
     export PATH=$PATH:/usr/local/bin
@@ -153,8 +139,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     alias emacs=/Applications/Emacs.app/Contents/MacOS/Emacs
 fi
 
-# Enable conda
-. $HOME/miniconda3/etc/profile.d/conda.sh
+# -----------------------------------------------------------------------------
+# SSH
+# -----------------------------------------------------------------------------
 
 # Start ssh-agent if necessary
 # https://unix.stackexchange.com/a/217223
@@ -165,3 +152,28 @@ fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 # uncomment below to auto-add keys to ssh-agent
 # ssh-add -l > /dev/null || ssh-add
+
+# -----------------------------------------------------------------------------
+# CONDA
+# -----------------------------------------------------------------------------
+
+# Macros for switching between conda and system Python
+alias condafy="conda activate base"
+alias noconda="conda deactivate"
+
+# Activate a conda environment named the same as the current directory
+function conact() {
+    conda activate $(basename $(pwd))
+}
+
+# Shortcuts for creating and removing conda environments
+function cenv() {
+    conda create -yn $(basename $(pwd)) python=3
+}
+
+function rmcenv() {
+    conda remove -n $(basename $(pwd)) --all
+}
+
+# Enable conda
+. $HOME/miniconda3/etc/profile.d/conda.sh
