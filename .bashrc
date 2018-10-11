@@ -178,9 +178,14 @@ function conact() {
     conda activate $(basename $(pwd))
 }
 
-# Create a conda environment for the current directory
+# Create a conda environment for the current directory.
+# Use `environment.yaml` if it exists, otherwise create an empty environment.
 function cenv() {
-    conda create -yn $(basename $(pwd)) python=3
+    if [ -f environment.yaml ]; then
+	conda env create --file=environment.yaml -n $(basename $(pwd))
+    else
+	conda create -yn $(basename $(pwd))
+    fi
 }
 
 # Remove current directory's conda environment
