@@ -36,3 +36,4 @@ echo "Linking others..."
 ln -sf $HERE/.cookiecutterrc $HOME
 ln -sf $HERE/.latexmkrc $HOME
 ln -sf $HERE/.gitconfig $HOME
+ln -sf $HERE/.tmux.conf $HOME
