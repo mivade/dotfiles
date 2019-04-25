@@ -22,6 +22,7 @@
     fill-column-indicator
     firecode-theme ; high-contrast dark theme
     flycheck
+    graphviz-dot-mode
     jinja2-mode
     js2-mode
     magit
