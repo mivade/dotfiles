@@ -171,6 +171,7 @@ function gitignore() {
 
 # Macros for switching between conda and system Python
 alias condafy="conda activate base"
+alias cbase="conda activate base"
 alias noconda="conda deactivate"
 
 # Activate a conda environment named the same as the current directory
