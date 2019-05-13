@@ -19,6 +19,7 @@
     better-defaults
     csv-mode
     dumb-jump
+    dracula ; dark theme
     fill-column-indicator
     firecode-theme ; high-contrast dark theme
     flycheck
@@ -52,7 +53,7 @@
 
 ;; Set color theme
 (global-font-lock-mode t)
-(load-theme 'firecode t)
+(load-theme 'dracula t)
 
 ;; Transient mark mode (highlight marked text)
 (transient-mark-mode t)
