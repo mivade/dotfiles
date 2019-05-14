@@ -8,8 +8,8 @@
 
 (when (>= emacs-major-version 24)
   (require 'package)
-  (package-initialize)
   (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t))
+  (package-initialize)
   (when (not package-archive-contents)
     (package-refresh-contents))
 
@@ -19,7 +19,7 @@
     better-defaults
     csv-mode
     dumb-jump
-    dracula ; dark theme
+    dracula-theme ; dark theme
     fill-column-indicator
     firecode-theme ; high-contrast dark theme
     flycheck
