@@ -103,7 +103,7 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   elif [ -f /etc/bash_completion.d ]; then
-    . /etc/bash_completion
+    . /etc/bash_completion.d
   fi
 fi
 
