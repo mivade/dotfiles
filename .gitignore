@@ -11,3 +11,9 @@
 ede-projects.el
 .config/Code/User/workspaceStorage
 .nanorc
+
+# VSCode ignored files
+vscode/.config/Code/
+vscode/.config/Code/User/globalStorage/
+vscode/.config/Code/User/workspaceStorage/
+!vscode/.config/Code/User
