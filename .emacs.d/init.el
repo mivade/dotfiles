@@ -35,6 +35,7 @@
     qml-mode
     rust-mode
     spacemacs-theme
+    use-package
     web-mode
     yaml-mode
     zerodark-theme ; medium-contrast dark theme
@@ -43,7 +44,9 @@
 (mapc #'(lambda (package)
   (unless (package-installed-p package)
     (package-install package)))
-  myPackages)
+      myPackages)
+
+(eval-when-compile (require 'use-package))
 
 ;; LOOK AND FEEL
 ;; -------------
