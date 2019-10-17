@@ -14,10 +14,10 @@
     (package-refresh-contents))
 
 (defvar myPackages
-  '(arduino-mode
+  '(;arduino-mode
     auto-complete
     better-defaults
-    csv-mode
+    ;csv-mode
     dumb-jump
     dracula-theme ; dark theme
     fill-column-indicator
