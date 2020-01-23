@@ -111,13 +111,6 @@ fi
 export TERM=xterm-256color
 
 # -----------------------------------------------------------------------------
-# PATH
-# -----------------------------------------------------------------------------
-
-export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
-export NODE_PATH=$NODE_PATH:$HOME/.local/lib/node_modules
-
-# -----------------------------------------------------------------------------
 # OS-SPECIFIC CONFIGURATION
 # -----------------------------------------------------------------------------
 
@@ -197,4 +190,12 @@ function rmcenv() {
 }
 
 # Enable conda
+# FIXME: don't panic if this fails
 . $HOME/miniconda3/etc/profile.d/conda.sh
+
+# -----------------------------------------------------------------------------
+# PATH
+# -----------------------------------------------------------------------------
+
+export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/miniconda3/envs/bin/bin:$PATH"
+export NODE_PATH=$NODE_PATH:$HOME/.local/lib/node_modules
