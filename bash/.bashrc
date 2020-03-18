@@ -198,4 +198,5 @@ export NODE_PATH=$NODE_PATH:$HOME/.local/lib/node_modules
 # -----------------------------------------------------------------------------
 
 alias tmux="$MINICONDA_HOME/envs/tmux/bin/tmux"
+alias tmuxp="$MINICONDA_HOME/envs/tmux/bin/tmuxp"
 
