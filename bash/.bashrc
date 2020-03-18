@@ -85,15 +85,6 @@ fi
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -164,6 +155,10 @@ function gitignore() {
 # CONDA
 # -----------------------------------------------------------------------------
 
+if [ -z ${MINICONDA_HOME+x} ]; then
+    export MINICONDA_HOME="$HOME/miniconda3"
+fi
+
 # Macros for switching between conda and system Python
 alias condafy="conda activate base"
 alias cbase="conda activate base"
@@ -190,12 +185,19 @@ function rmcenv() {
 }
 
 # Enable conda
-# FIXME: don't panic if this fails
-. $HOME/miniconda3/etc/profile.d/conda.sh
+. $MINICONDA_HOME/etc/profile.d/conda.sh
 
 # -----------------------------------------------------------------------------
 # PATH
 # -----------------------------------------------------------------------------
 
-export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/miniconda3/envs/bin/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 export NODE_PATH=$NODE_PATH:$HOME/.local/lib/node_modules
+
+# -----------------------------------------------------------------------------
+# ALIASES
+# -----------------------------------------------------------------------------
+
+alias tmux="$MINICONDA_HOME/envs/tmux/bin/tmux"
+alias tmuxp="$MINICONDA_HOME/envs/tmux/bin/tmuxp"
+
