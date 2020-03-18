@@ -164,6 +164,8 @@ function gitignore() {
 # CONDA
 # -----------------------------------------------------------------------------
 
+export MINICONDA_HOME="$HOME/miniconda3"
+
 # Macros for switching between conda and system Python
 alias condafy="conda activate base"
 alias cbase="conda activate base"
@@ -191,11 +193,11 @@ function rmcenv() {
 
 # Enable conda
 # FIXME: don't panic if this fails
-. $HOME/miniconda3/etc/profile.d/conda.sh
+. $MINICONDA_HOME/etc/profile.d/conda.sh
 
 # -----------------------------------------------------------------------------
 # PATH
 # -----------------------------------------------------------------------------
 
-export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/miniconda3/envs/bin/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 export NODE_PATH=$NODE_PATH:$HOME/.local/lib/node_modules
