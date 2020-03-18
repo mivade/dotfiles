@@ -155,7 +155,9 @@ function gitignore() {
 # CONDA
 # -----------------------------------------------------------------------------
 
-export MINICONDA_HOME="$HOME/miniconda3"
+if [ -z ${MINICONDA_HOME+x} ]; then
+    export MINICONDA_HOME="$HOME/miniconda3"
+fi
 
 # Macros for switching between conda and system Python
 alias condafy="conda activate base"
@@ -183,7 +185,6 @@ function rmcenv() {
 }
 
 # Enable conda
-# FIXME: don't panic if this fails
 . $MINICONDA_HOME/etc/profile.d/conda.sh
 
 # -----------------------------------------------------------------------------
