@@ -198,6 +198,11 @@ export NODE_PATH=$NODE_PATH:$HOME/.local/lib/node_modules
 # ALIASES
 # -----------------------------------------------------------------------------
 
-alias tmux="$MINICONDA_HOME/envs/tmux/bin/tmux"
-alias tmuxp="$MINICONDA_HOME/envs/tmux/bin/tmuxp"
+function alias_if_exists() {
+    if [ -f $2 ]; then
+        alias $1=$2
+    fi
+}
 
+alias_if_exists "tmux" "$MINICONDA_HOME/envs/tmux/bin/tmux"
+alias_if_exists "tmuxp" "$MINICONDA_HOME/envs/tmux/bin/tmuxp"
