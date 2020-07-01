@@ -119,10 +119,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
             source $(brew --prefix)/etc/bash_completion.d/$completion
         done
     fi
-
-    # Assume emacs is installed in /Applications to not use the super old
-    # system version
-    alias emacs=/Applications/Emacs.app/Contents/MacOS/Emacs
 fi
 
 # -----------------------------------------------------------------------------
