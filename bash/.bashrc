@@ -200,5 +200,7 @@ function alias_if_exists() {
     fi
 }
 
+alias_if_exists "htop" "$MINICONDA_HOME/envs/htop/bin/htop"
+alias_if_exists "glances" "$MINICONDA_HOME/envs/glances/bin/glances"
 alias_if_exists "tmux" "$MINICONDA_HOME/envs/tmux/bin/tmux"
 alias_if_exists "tmuxp" "$MINICONDA_HOME/envs/tmux/bin/tmuxp"
