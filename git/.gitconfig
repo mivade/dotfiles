@@ -21,3 +21,5 @@
 	helper = store
 [hubflow.branch]
         master = main
+[pull]
+	ff = only
