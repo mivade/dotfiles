@@ -3,7 +3,7 @@
 	name = Michael V. DePalatis
 	email = mike@depalatis.net
 [diff]
-	tool = diffuse
+	tool = meld
 [merge]
 	tool = meld
 [alias]
@@ -23,3 +23,5 @@
         master = main
 [pull]
 	ff = only
+[init]
+	defaultBranch = main
