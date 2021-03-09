@@ -1,0 +1,19 @@
+# Top-level EditorConfig settings
+#
+# This file gets placed with GNU stow and will be used if no project-specific
+# configuration file exists.
+
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+
+[*.{html,js}]
+indent_size = 2
+
+[Makefile]
+indent_style = tab
