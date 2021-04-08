@@ -10,3 +10,6 @@
 [submodule "gitignore"]
 	path = gitignore
 	url = git@github.com:mivade/gitignore.git
+[submodule "emacs/.emacs.d"]
+	path = emacs/.emacs.d
+	url = git@github.com:mivade/prelude.git
