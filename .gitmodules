@@ -1,5 +1,5 @@
 [submodule "nanorc"]
-	path = nanorc
+	path = git-submodules/nanorc
 	url = git@github.com:mivade/nanorc.git
 [submodule "cookiecutters/cookiecutter-pypackage"]
 	path = cookiecutter/cookiecutters/cookiecutter-pypackage
