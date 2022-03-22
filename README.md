@@ -2,6 +2,15 @@
 
 Configuration and other common files uesd by me.
 
+## Usage
+
+Use GNU stow for each configuration directory. For example to use common git
+configuration:
+
+```
+stow git
+```
+
 ## Notes
 
 ### `PATH`
