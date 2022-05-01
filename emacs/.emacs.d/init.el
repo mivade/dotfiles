@@ -29,8 +29,17 @@
 ;; Git
 (use-package magit)
 
+;; Editorconfig
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1))
+
+;; Markdown
+(use-package markdown-mode)
+
 ;; Python
-;; FIXME: getting errors here
+;; FIXME: getting errors here (error in process sentinel)
 ;; See https://realpython.com/emacs-the-best-python-editor/
 (use-package elpy)
 (elpy-enable)
@@ -43,7 +52,7 @@
  ;; If there is more than one, they won't work right.
  '(line-number-mode nil)
  '(package-selected-packages
-   '(flycheck elpy magit company monokai-theme zenburn-theme zenburn use-package)))
+   '(markdown-mode editorconfig flycheck elpy magit company monokai-theme zenburn-theme zenburn use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
