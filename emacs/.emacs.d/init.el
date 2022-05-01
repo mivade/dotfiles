@@ -36,7 +36,7 @@
  ;; If there is more than one, they won't work right.
  '(line-number-mode nil)
  '(package-selected-packages
-   '(firecode-theme markdown-mode editorconfig flycheck elpy magit company monokai-theme zenburn-theme zenburn use-package)))
+   '(better-defaults firecode-theme markdown-mode editorconfig flycheck elpy magit company monokai-theme zenburn-theme zenburn use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
