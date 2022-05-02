@@ -35,4 +35,5 @@
 (load "~/.emacs.d/git.el")
 (load "~/.emacs.d/markdown.el")
 (load "~/.emacs.d/python.el")
+(load "~/.emacs.d/terraform.el")
 (load "~/.emacs.d/web.el")
