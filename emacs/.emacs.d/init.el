@@ -1,7 +1,13 @@
 ;; Don't show the splash screen
 (setq inhibit-splash-screen t)
 
+;; Enable mouse usage in terminals
+(unless (display-graphic-p)
+    (xterm-mouse-mode 1)
+)
+
 ;; Configure packaging
+;; https://github.com/jwiegley/use-package
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
