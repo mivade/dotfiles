@@ -33,7 +33,6 @@
 ;; Load additional functionality from other files
 (load "~/.emacs.d/ide.el")
 (load "~/.emacs.d/git.el")
-(load "~/.emacs.d/editorconfig.el")
 (load "~/.emacs.d/markdown.el")
 (load "~/.emacs.d/python.el")
 (load "~/.emacs.d/web.el")

@@ -17,3 +17,9 @@
 
 (use-package ido-hacks)
 (use-package helm)
+
+;; Use editorconfig to control indentation, whitespace, etc.
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1))
