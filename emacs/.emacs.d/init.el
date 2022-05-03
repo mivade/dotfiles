@@ -1,5 +1,14 @@
-;; Tweak garbage collection parameters
+;; Show startup time
 ;; https://blog.d46.us/advanced-emacs-startup/
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (message "Emacs ready in %s with %d garbage collections."
+                     (format "%.2f seconds"
+                             (float-time
+                              (time-subtract after-init-time before-init-time)))
+                     gcs-done)))
+
+;; Tweak garbage collection parameters
 ;; https://github.com/jschaf/dotfiles/blob/master/emacs/start.el
 (setq gc-cons-threshold (* 50 1000 1000))
 (setq gc-cons-percentage 0.6)

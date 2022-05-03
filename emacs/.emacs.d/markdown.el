@@ -1,2 +1,4 @@
 ;; Markdown
-(use-package markdown-mode)
+(use-package markdown-mode
+  :defer t
+)
