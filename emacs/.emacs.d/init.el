@@ -1,3 +1,9 @@
+;; Tweak garbage collection parameters
+;; https://blog.d46.us/advanced-emacs-startup/
+;; https://github.com/jschaf/dotfiles/blob/master/emacs/start.el
+(setq gc-cons-threshold (* 50 1000 1000))
+(setq gc-cons-percentage 0.6)
+
 ;; Don't show the splash screen
 (setq inhibit-splash-screen t)
 
