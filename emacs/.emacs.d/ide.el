@@ -1,6 +1,10 @@
 ;; IDE-like functionality that is not language-specific lives here
 
 (use-package better-defaults)
+(use-package xclip
+  :config
+  (xclip-mode 1)
+)
 
 ;; Autocompletion: https://company-mode.github.io/
 (use-package company)
@@ -26,7 +30,7 @@
 
 ;; Use editorconfig to control indentation, whitespace, etc.
 (use-package editorconfig
-  :defer t
   :ensure t
   :config
-  (editorconfig-mode 1))
+  (editorconfig-mode 1)
+)
