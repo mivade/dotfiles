@@ -13,8 +13,12 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 charset = utf-8
 
-[*.{html,js,json,yaml,yml}]
+[*.{html,js,ts,json,yaml,yml}]
 indent_size = 2
+
+[*.{lisp,asd,el}]
+indent_size = none
+tab_width = none
 
 [Makefile]
 indent_style = tab
