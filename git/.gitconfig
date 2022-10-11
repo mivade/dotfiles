@@ -2,6 +2,8 @@
 [user]
 	name = Michael V. DePalatis
 	email = mike@depalatis.net
+[include]
+	path = ~/.gitconfig.local
 [diff]
 	tool = meld
 [merge]
