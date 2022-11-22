@@ -13,6 +13,9 @@ ede-projects.el
 .config/Code/User/workspaceStorage
 .nanorc
 
+# Midnight commander panel settings
+mc/.config/mc/panels.ini
+
 # VSCode ignored files
 vscode/.config/Code/
 vscode/.config/Code/User/globalStorage/
