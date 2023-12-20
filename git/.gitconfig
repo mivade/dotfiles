@@ -2,8 +2,11 @@
 [user]
 	name = Michael V. DePalatis
 	email = mike@depalatis.net
+# See https://stackoverflow.com/a/48088291 for more include hints
+# Test new inclusions with `git config --list`
 [include]
 	path = ~/.gitconfig.local
+    path = "~/git/ascend/.gitconfig.local"
 [diff]
 	tool = meld
 [merge]
