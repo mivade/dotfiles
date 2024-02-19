@@ -6,6 +6,8 @@
 	path = ~/.gitconfig.local
 [diff]
 	tool = meld
+    # https://jvns.ca/blog/2024/02/16/popular-git-config-options/
+    submodule = "log"
 [merge]
 	tool = meld
 [alias]
@@ -30,3 +32,6 @@
 	defaultBranch = main
 [grep]
 	lineNumber = true
+[status]
+    # https://jvns.ca/blog/2024/02/16/popular-git-config-options/
+    submoduleSummary = true
