@@ -19,7 +19,6 @@
 ;; Enable mouse usage in terminals
 (unless (display-graphic-p)
   (xterm-mouse-mode 1)
-  (xterm-mouse-mode 1)
   (global-set-key (kbd "<mouse-4>") 'scroll-down-line)
   (global-set-key (kbd "<mouse-5>") 'scroll-up-line)
 )
@@ -41,6 +40,7 @@
 (load "~/.emacs.d/ide.el")
 (load "~/.emacs.d/git.el")
 (load "~/.emacs.d/markdown.el")
+(load "~/.emacs.d/org.el")
 (load "~/.emacs.d/python.el")
 (load "~/.emacs.d/terraform.el")
 (load "~/.emacs.d/themes.el")
