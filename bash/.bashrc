@@ -211,3 +211,6 @@ alias_if_exists "pipx" "$MINICONDA_HOME/envs/pipx/bin/pipx"
 alias_if_exists "tmux" "$MINICONDA_HOME/envs/tmux/bin/tmux"
 alias_if_exists "tmuxp" "$MINICONDA_HOME/envs/tmux/bin/tmuxp"
 alias_if_exists "emacs" "$MINICONDA_HOME/envs/emacs/bin/emacs"
+
+# Copy from the command line
+alias copy="xclip -selection clipboard"
