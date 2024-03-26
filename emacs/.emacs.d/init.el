@@ -45,6 +45,7 @@
 (load "~/.emacs.d/terraform.el")
 (load "~/.emacs.d/themes.el")
 (load "~/.emacs.d/web.el")
+(load "~/.emacs.d/yaml.el")
 
 ;; Set color theme
 (load-theme 'firecode t)
