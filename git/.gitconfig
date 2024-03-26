@@ -14,11 +14,13 @@
 [merge]
 	tool = meld
 [alias]
-	pushall = "!f(){ for i in `git remote`; do git push $i; done; };f"
-	graph = log --all --oneline --color --graph --decorate=short --date=short
-	glog = log --oneline --color --graph --decorate=short --date=short
-	last = !git graph -n 10
-        upstream-merge = !bash -c 'git checkout master && git fetch --prune && git fetch upstream && git merge upstream/master && git push'
+    pushall = "!f(){ for i in `git remote`; do git push $i; done; };f"
+    graph = log --all --oneline --color --graph --decorate=short --date=short
+    glog = log --oneline --color --graph --decorate=short --date=short
+    last = !git graph -n 10
+    upstream-merge = !bash -c 'git checkout master && git fetch --prune && git fetch upstream && git merge upstream/master && git push'
+    # Partial clone: https://github.blog/2020-12-21-get-up-to-speed-with-partial-clone-and-shallow-clone/
+    pclone = clone --filter=blob:none
 [push]
 	default = simple
 [core]
