@@ -16,3 +16,8 @@
   )
 )
 (setq org-confirm-babel-evaluate nil)
+(setq org-todo-keyword-faces
+  '(("TODO" . "red")
+    ("DOING" . "yellow")
+    ("DONE" . "green"))
+)
