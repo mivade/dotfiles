@@ -153,42 +153,6 @@ function gitignore() {
 }
 
 # -----------------------------------------------------------------------------
-# CONDA
-# -----------------------------------------------------------------------------
-
-if [ -z ${MINICONDA_HOME+x} ]; then
-    export MINICONDA_HOME="$HOME/miniconda3"
-fi
-
-# Macros for switching between conda and system Python
-alias condafy="conda activate base"
-alias cbase="conda activate base"
-alias noconda="conda deactivate"
-
-# Activate a conda environment named the same as the current directory
-function conact() {
-    conda activate $(basename $(pwd))
-}
-
-# Create a conda environment for the current directory.
-# Use `environment.yaml` if it exists, otherwise create an empty environment.
-function cenv() {
-    if [ -f environment.yaml ]; then
-	conda env create --file=environment.yaml -n $(basename $(pwd))
-    else
-	conda create -yn $(basename $(pwd))
-    fi
-}
-
-# Remove current directory's conda environment
-function rmcenv() {
-    conda remove -n $(basename $(pwd)) --all
-}
-
-# Enable conda
-. $MINICONDA_HOME/etc/profile.d/conda.sh
-
-# -----------------------------------------------------------------------------
 # PATH
 # -----------------------------------------------------------------------------
 
@@ -204,13 +168,6 @@ function alias_if_exists() {
         alias $1=$2
     fi
 }
-
-alias_if_exists "htop" "$MINICONDA_HOME/envs/htop/bin/htop"
-alias_if_exists "glances" "$MINICONDA_HOME/envs/glances/bin/glances"
-alias_if_exists "pipx" "$MINICONDA_HOME/envs/pipx/bin/pipx"
-alias_if_exists "tmux" "$MINICONDA_HOME/envs/tmux/bin/tmux"
-alias_if_exists "tmuxp" "$MINICONDA_HOME/envs/tmux/bin/tmuxp"
-alias_if_exists "emacs" "$MINICONDA_HOME/envs/emacs/bin/emacs"
 
 # Copy from the command line
 alias copy="xclip -selection clipboard"
