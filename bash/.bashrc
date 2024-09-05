@@ -106,6 +106,9 @@ fi
 # Better terminal color support
 export TERM=xterm-256color
 
+# Use starship if available
+eval "$(starship init bash)" || :
+
 # -----------------------------------------------------------------------------
 # OS-SPECIFIC CONFIGURATION
 # -----------------------------------------------------------------------------
@@ -160,7 +163,7 @@ export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 export NODE_PATH=$NODE_PATH:$HOME/.local/lib/node_modules
 
 # -----------------------------------------------------------------------------
-# SHELL COMPLETION 
+# SHELL COMPLETION
 # -----------------------------------------------------------------------------
 
 if [ -x "$(command -v uv)" ]; then
