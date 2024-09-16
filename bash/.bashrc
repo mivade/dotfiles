@@ -106,9 +106,6 @@ fi
 # Better terminal color support
 export TERM=xterm-256color
 
-# Use starship if available
-eval "$(starship init bash)" || :
-
 # -----------------------------------------------------------------------------
 # OS-SPECIFIC CONFIGURATION
 # -----------------------------------------------------------------------------
@@ -171,6 +168,13 @@ if [ -x "$(command -v uv)" ]; then
 fi
 
 # -----------------------------------------------------------------------------
+# PROMPT
+# -----------------------------------------------------------------------------
+
+# Use starship if available
+eval "$(starship init bash)" || :
+
+# -----------------------------------------------------------------------------
 # ALIASES
 # -----------------------------------------------------------------------------
 
@@ -182,3 +186,4 @@ function alias_if_exists() {
 
 # Copy from the command line
 alias copy="xclip -selection clipboard"
+
