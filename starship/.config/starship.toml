@@ -5,7 +5,7 @@
 add_newline = true
 
 [python]
-pyenv_version_name = true
+pyenv_version_name = false
 
 [quarto]
 disabled = true
