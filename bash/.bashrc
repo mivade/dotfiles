@@ -187,3 +187,6 @@ function alias_if_exists() {
 # Copy from the command line
 alias copy="xclip -selection clipboard"
 
+function vac() {
+    source ~/venvs/$1/bin/activate
+}
