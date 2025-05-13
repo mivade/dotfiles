@@ -188,5 +188,9 @@ function alias_if_exists() {
 alias copy="xclip -selection clipboard"
 
 function vac() {
-    source ~/venvs/$1/bin/activate
+    if [ "$#" -eq 1 ]; then
+        source ~/venvs/$1/bin/activate
+    else
+	source .venv/bin/activate
+    fi
 }
