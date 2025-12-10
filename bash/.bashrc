@@ -188,6 +188,10 @@ function alias_if_exists() {
 # Copy from the command line
 alias copy="xclip -selection clipboard"
 
+# Launch the rclone web UI
+alias rcgui="rclone rcd --rc-web-gui"
+
+# Activate virtual environments
 function vac() {
     if [ "$#" -eq 1 ]; then
         source ~/venvs/$1/bin/activate
