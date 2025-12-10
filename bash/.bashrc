@@ -196,7 +196,7 @@ function vac() {
     if [ "$#" -eq 1 ]; then
         source ~/venvs/$1/bin/activate
     else
-	source .venv/bin/activate
+        source .venv/bin/activate
     fi
 }
 
