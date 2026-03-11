@@ -36,6 +36,9 @@
 (require 'use-package)
 (setq use-package-always-ensure 't)
 
+;; Silence warnings
+(setq native-comp-warning-on-missing-source nil)
+
 ;; Load additional functionality from other files
 (load "~/.emacs.d/ide.el")
 (load "~/.emacs.d/git.el")
@@ -48,4 +51,4 @@
 (load "~/.emacs.d/yaml.el")
 
 ;; Set color theme
-(load-theme 'firecode t)
+(load-theme 'monokai t)

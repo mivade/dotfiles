@@ -34,3 +34,7 @@
   :config
   (editorconfig-mode 1)
 )
+
+(use-package lsp-mode
+  :ensure t
+)
