@@ -1,5 +1,7 @@
 ;; IDE-like functionality that is not language-specific lives here
 
+(global-display-line-numbers-mode)
+
 (use-package better-defaults)
 (use-package xclip
   :config

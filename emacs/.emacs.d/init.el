@@ -51,4 +51,4 @@
 (load "~/.emacs.d/yaml.el")
 
 ;; Set color theme
-(load-theme 'monokai t)
+(load-theme 'dracula t)
