@@ -23,6 +23,10 @@
   (global-set-key (kbd "<mouse-5>") 'scroll-up-line)
 )
 
+;; Auto-reload files when they change
+(setq auto-revert-interval 1)
+(setq auto-revert-verbose nil)
+
 ;; Configure packaging
 ;; https://github.com/jwiegley/use-package
 (require 'package)
