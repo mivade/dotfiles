@@ -22,3 +22,5 @@ vscode/.config/Code/
 vscode/.config/Code/User/globalStorage/
 vscode/.config/Code/User/workspaceStorage/
 !vscode/.config/Code/User
+
+**/.claude/settings.local.json
