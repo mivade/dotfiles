@@ -142,6 +142,7 @@
 
     "auto_install_extensions": {
         "Catppuccin Icons": true,
+        "dockerfile": true,
         "editorconfig": true,
         "Git Firefly": true,
         "html": true,
