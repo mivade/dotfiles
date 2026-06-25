@@ -20,6 +20,7 @@ git-ignore = false
 center = ["version-control", "diagnostics"]
 
 [keys.normal]
+C-c = "no_op"
 C-s = ":w"
 G = "goto_file_end"
 "#" = "toggle_comments"
