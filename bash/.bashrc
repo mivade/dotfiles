@@ -200,5 +200,10 @@ function vac() {
     fi
 }
 
+# Read from ~/.env if it exists
+if [ -f $HOME/.env ]; then
+    set -a && source $HOME/.env && set +a
+fi
+
 # Other env vars
 XDG_DATA_DIRS="/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share"
