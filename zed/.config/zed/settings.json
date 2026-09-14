@@ -7,6 +7,11 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+    "markdown_preview": {
+        "max_width": 1200.0,
+        "limit_content_width": true
+    },
+    "format_on_save": "on",
     "diff_view_style": "unified",
     "file_finder": {},
     "search": {
@@ -41,16 +46,34 @@
             "user": null,
             "projects": [
                 {
-                    "paths": ["/home/mvd/git/ascend-design-docs"]
+                    "paths": [
+                        "/home/mvd/git/ascend-design-docs"
+                    ]
                 },
                 {
-                    "paths": ["/home/mvd/git/environment-setup"]
+                    "paths": [
+                        "/home/mvd/git/batterysimm-common"
+                    ]
                 },
                 {
-                    "paths": ["/home/mvd/git/hestia"]
+                    "paths": [
+                        "/home/mvd/git/common-data"
+                    ]
                 },
                 {
-                    "paths": ["/home/mvd/git/traverse"]
+                    "paths": [
+                        "/home/mvd/git/environment-setup"
+                    ]
+                },
+                {
+                    "paths": [
+                        "/home/mvd/git/hestia"
+                    ]
+                },
+                {
+                    "paths": [
+                        "/home/mvd/git/traverse"
+                    ]
                 }
             ]
         }
