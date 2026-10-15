@@ -21,6 +21,7 @@ center = ["version-control", "diagnostics"]
 
 [keys.normal]
 C-c = "no_op"
+C-r = ":reload-all"
 C-s = ":w"
 G = "goto_file_end"
 "#" = "toggle_comments"
