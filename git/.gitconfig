@@ -8,11 +8,12 @@
 	path = ~/.gitconfig.local
     path = "~/git/ascend/.gitconfig.local"
 [diff]
-	tool = meld
+	tool = vimdiff
     # https://jvns.ca/blog/2024/02/16/popular-git-config-options/
     submodule = "log"
 [merge]
-	tool = meld
+	# tool = meld
+	tool = kdiff3
 [alias]
     pushall = "!f(){ for i in `git remote`; do git push $i; done; };f"
     graph = log --all --oneline --color --graph --decorate=short --date=short
