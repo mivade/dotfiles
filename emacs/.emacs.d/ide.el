@@ -37,10 +37,12 @@
   (editorconfig-mode 1)
 )
 
+;; Language server
 (use-package lsp-mode
   :ensure t
 )
 
+;; Project management
 (use-package projectile
   :ensure t
   :init
