@@ -30,6 +30,11 @@
   :defer t
 )
 
+;; File explorer
+(use-package treemacs
+  :bind
+  ("C-c t" . treemacs))
+
 ;; Use editorconfig to control indentation, whitespace, etc.
 (use-package editorconfig
   :ensure t
@@ -50,3 +55,10 @@
   :bind (:map projectile-mode-map
               ("s-p" . projectile-command-map)
               ("C-c p" . projectile-command-map)))
+
+;; Tree-sitter
+(use-package tree-sitter
+  :config
+  (global-tree-sitter-mode)
+  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
+(use-package tree-sitter-langs)
