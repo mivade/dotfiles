@@ -43,6 +43,12 @@
 ;; Silence warnings
 (setq native-comp-warning-on-missing-source nil)
 
+;; Improved minibuffer (vertical orientation)
+;; https://github.com/minad/vertico
+(use-package vertico
+  :init
+  (vertico-mode))
+
 ;; Load additional functionality from other files
 (load "~/.emacs.d/ide.el")
 (load "~/.emacs.d/git.el")
