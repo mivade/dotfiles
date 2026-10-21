@@ -31,9 +31,12 @@
 )
 
 ;; File explorer
+;; https://github.com/Alexander-Miller/treemacs
+;; Open with C-x t t
 (use-package treemacs
   :bind
-  ("C-c t" . treemacs))
+  ("C-x t t" . treemacs-display-current-project-exclusively)
+)
 
 ;; Use editorconfig to control indentation, whitespace, etc.
 (use-package editorconfig
