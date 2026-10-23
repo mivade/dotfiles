@@ -34,6 +34,9 @@
 ;; https://github.com/Alexander-Miller/treemacs
 ;; Open with C-x t t
 (use-package treemacs
+  :defer t
+  :init
+  (add-hook 'treemacs-mode-hook (lambda () (display-line-numbers-mode -1)))
   :bind
   ("C-x t t" . treemacs-display-current-project-exclusively)
 )
