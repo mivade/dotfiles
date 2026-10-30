@@ -1,12 +1,9 @@
 ;; Python
-;; See https://realpython.com/emacs-the-best-python-editor/
-;; Note that if getting strange errors about a process exiting with code 1
-;; it's likely because `virtualenv` cannot be found (see output of
-;; `M-x elpy-config` to confirm). Just make sure that `virtualenv` is
-;; installed (e.g., `conda install -y virtualenv`)
-(use-package elpy
-  :defer t
-  :commands elpy-enable
+
+;; https://www.emacswiki.org/emacs?ProgrammingWithPythonModeDotEl
+(use-package python-mode
   :init
-  (with-eval-after-load 'python (elpy-enable))
+  (autoload 'python-mode "python-mode" "Python Mode." t)
+  (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+  (add-to-list 'interpreter-mode-alist '("python" . python-mode))
 )

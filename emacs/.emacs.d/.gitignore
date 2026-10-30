@@ -1,4 +1,7 @@
+.cache/
 transient/
+/projects
 history
 places
 custom.el
+projectile-*.eld
