@@ -51,6 +51,7 @@
 
 ;; Load additional functionality from other files
 (load "~/.emacs.d/ide.el")
+(load "~/.emacs.d/docker.el")
 (load "~/.emacs.d/git.el")
 (load "~/.emacs.d/lua.el")
 (load "~/.emacs.d/markdown.el")
