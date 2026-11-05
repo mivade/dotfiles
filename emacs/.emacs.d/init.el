@@ -42,6 +42,8 @@
 
 ;; Silence warnings
 (setq native-comp-warning-on-missing-source nil)
+;; https://emacs.stackexchange.com/a/78802
+(setq warning-minimum-level :error)
 
 ;; Improved minibuffer (vertical orientation)
 ;; https://github.com/minad/vertico
