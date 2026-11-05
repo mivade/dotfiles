@@ -11,6 +11,11 @@
 ;; Autocompletion: https://company-mode.github.io/
 (use-package company)
 (add-hook 'after-init-hook 'global-company-mode)
+(with-eval-after-load 'company
+  (setq company-frontends
+        '(company-pseudo-tooltip-unless-just-one-frontend
+          company-preview-if-just-one-frontend
+          company-echo-metadata-frontend)))
 
 ;; Syntax checking
 (use-package flycheck
