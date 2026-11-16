@@ -19,8 +19,8 @@
 ;; Enable mouse usage in terminals
 (unless (display-graphic-p)
   (xterm-mouse-mode 1)
-  (global-set-key (kbd "<mouse-4>") 'scroll-down-line)
-  (global-set-key (kbd "<mouse-5>") 'scroll-up-line)
+  (global-set-key (kbd "<mouse-4>") (lambda () (interactive) (scroll-down 3)))
+  (global-set-key (kbd "<mouse-5>") (lambda () (interactive) (scroll-up 3)))
 )
 
 ;; Auto-reload files when they change
