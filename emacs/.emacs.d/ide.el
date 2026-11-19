@@ -54,8 +54,14 @@
 )
 
 ;; Language server
+;; https://emacs-lsp.github.io/lsp-mode/page/installation/
 (use-package lsp-mode
   :ensure t
+  :defer t
+  :hook (
+    (python-mode . lsp)
+  )
+  :commands (lsp lsp-deferred)
 )
 
 ;; Project management
